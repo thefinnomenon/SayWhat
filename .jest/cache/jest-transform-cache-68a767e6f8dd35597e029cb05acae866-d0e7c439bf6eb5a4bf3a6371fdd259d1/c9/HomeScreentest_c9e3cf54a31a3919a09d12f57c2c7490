@@ -1,0 +1,15 @@
+4400c2cc40854fa02c3771b638c6c83c
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+require("react-native");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _DecksScreen = _interopRequireDefault(require("../src/screens/DecksScreen"));
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+it('renders correctly', function () {
+  _reactTestRenderer.default.create(_react.default.createElement(_DecksScreen.default, null));
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9maW5uL0Rldi9Qcm9qZWN0cy9BY3RpdmUvU2F5V2hhdC9zYXl3aGF0L19fdGVzdHNfXy9Ib21lU2NyZWVuLnRlc3QudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBSUE7O0FBQ0E7O0FBQ0E7O0FBR0E7O0FBRUEsRUFBRSxDQUFDLG1CQUFELEVBQXNCLFlBQUs7QUFDM0IsNkJBQVMsTUFBVCxDQUFnQixlQUFBLGFBQUEsQ0FBQyxvQkFBRCxFQUFZLElBQVosQ0FBaEI7QUFDRCxDQUZDLENBQUYiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBmb3JtYXRcbiAqL1xuXG5pbXBvcnQgJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IERlY2tzU2NyZWVuIGZyb20gJy4uL3NyYy9zY3JlZW5zL0RlY2tzU2NyZWVuJztcblxuLy8gTm90ZTogdGVzdCByZW5kZXJlciBtdXN0IGJlIHJlcXVpcmVkIGFmdGVyIHJlYWN0LW5hdGl2ZS5cbmltcG9ydCByZW5kZXJlciBmcm9tICdyZWFjdC10ZXN0LXJlbmRlcmVyJztcblxuaXQoJ3JlbmRlcnMgY29ycmVjdGx5JywgKCkgPT4ge1xuICByZW5kZXJlci5jcmVhdGUoPERlY2tzU2NyZWVuIC8+KTtcbn0pO1xuIl19

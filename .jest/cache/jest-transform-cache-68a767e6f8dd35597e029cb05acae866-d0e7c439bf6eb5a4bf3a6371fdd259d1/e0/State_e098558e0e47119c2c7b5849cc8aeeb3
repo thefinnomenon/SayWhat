@@ -1,0 +1,20 @@
+79c5337311d84a85468410b318749d69
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var State = {
+  UNDETERMINED: 0,
+  FAILED: 1,
+  BEGAN: 2,
+  CANCELLED: 3,
+  ACTIVE: 4,
+  END: 5 };
+
+
+State.print = function (state) {
+  var keys = Object.keys(State);
+  for (var i = 0; i < keys.length; i++) {
+    if (state === State[keys[i]]) {
+      return keys[i];
+    }
+  }
+};var _default =
+
+State;exports.default = _default;

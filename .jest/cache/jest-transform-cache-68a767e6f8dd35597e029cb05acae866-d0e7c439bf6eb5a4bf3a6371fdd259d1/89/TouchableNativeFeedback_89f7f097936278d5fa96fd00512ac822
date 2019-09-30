@@ -1,0 +1,4 @@
+559b70b6cec8964454bde32d904f2cc0
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _reactNative = require("react-native");var _default =
+
+_reactNative.TouchableNativeFeedback;exports.default = _default;

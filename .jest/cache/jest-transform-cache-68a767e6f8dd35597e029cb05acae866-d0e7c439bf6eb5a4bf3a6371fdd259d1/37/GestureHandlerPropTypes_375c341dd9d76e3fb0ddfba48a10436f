@@ -1,0 +1,46 @@
+6c45905567435b1d7b52f9cb7a0ce1d1
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _propTypes = _interopRequireDefault(require("prop-types"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+var GestureHandlerPropTypes = {
+  id: _propTypes.default.string,
+  minPointers: _propTypes.default.number,
+  enabled: _propTypes.default.bool,
+  waitFor: _propTypes.default.oneOfType([
+  _propTypes.default.string,
+  _propTypes.default.object,
+  _propTypes.default.arrayOf(
+  _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]))]),
+
+
+  simultaneousHandlers: _propTypes.default.oneOfType([
+  _propTypes.default.string,
+  _propTypes.default.object,
+  _propTypes.default.arrayOf(
+  _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]))]),
+
+
+  shouldCancelWhenOutside: _propTypes.default.bool,
+  hitSlop: _propTypes.default.oneOfType([
+  _propTypes.default.number,
+  _propTypes.default.shape({
+    left: _propTypes.default.number,
+    top: _propTypes.default.number,
+    right: _propTypes.default.number,
+    bottom: _propTypes.default.number,
+    vertical: _propTypes.default.number,
+    horizontal: _propTypes.default.number,
+    width: _propTypes.default.number,
+    height: _propTypes.default.number })]),
+
+
+  onGestureEvent: _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.object]),
+  onHandlerStateChange: _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.object]),
+  onBegan: _propTypes.default.func,
+  onFailed: _propTypes.default.func,
+  onCancelled: _propTypes.default.func,
+  onActivated: _propTypes.default.func,
+  onEnded: _propTypes.default.func };var _default =
+
+
+GestureHandlerPropTypes;exports.default = _default;

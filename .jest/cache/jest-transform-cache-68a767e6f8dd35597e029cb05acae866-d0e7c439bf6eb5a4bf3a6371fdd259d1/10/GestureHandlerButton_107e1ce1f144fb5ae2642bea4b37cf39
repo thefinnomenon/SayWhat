@@ -1,0 +1,9 @@
+d727be4e969e2d24b24e6ab98394bb8c
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _reactNative = require("react-native");
+
+var RNGestureHandlerButton = (0, _reactNative.requireNativeComponent)(
+'RNGestureHandlerButton',
+null);var _default =
+
+
+RNGestureHandlerButton;exports.default = _default;

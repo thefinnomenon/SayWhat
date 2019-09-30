@@ -1,0 +1,354 @@
+02a5deaada45ec359edfb66a3f5119fe
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+var _react = _interopRequireWildcard(require("react"));
+var _reactNative = require("react-native");
+
+var _GestureHandler = require("./GestureHandler");var _jsxFileName = "/Users/finn/Dev/Projects/Active/SayWhat/saywhat/node_modules/react-native-gesture-handler/Swipeable.js";function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};if (obj != null) {var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(source, true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(source).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}
+
+var DRAG_TOSS = 0.05;var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Swipeable = function (_Component) {_inherits(Swipeable, _Component);
+
+
+
+
+
+
+
+
+
+
+
+
+  function Swipeable(_props) {var _this;_classCallCheck(this, Swipeable);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Swipeable).call(this, _props));_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _updateAnimatedEvent = function (props, state) {var
+      friction = props.friction,overshootFriction = props.overshootFriction,useNativeAnimations = props.useNativeAnimations;var
+      dragX = state.dragX,rowTranslation = state.rowTranslation,_state$leftWidth = state.leftWidth,leftWidth = _state$leftWidth === void 0 ? 0 : _state$leftWidth,_state$rowWidth = state.rowWidth,rowWidth = _state$rowWidth === void 0 ? 0 : _state$rowWidth;var _state$rightOffset =
+      state.rightOffset,rightOffset = _state$rightOffset === void 0 ? rowWidth : _state$rightOffset;
+      var rightWidth = Math.max(0, rowWidth - rightOffset);var _props$overshootLeft =
+
+
+
+
+      props.overshootLeft,overshootLeft = _props$overshootLeft === void 0 ? leftWidth > 0 : _props$overshootLeft,_props$overshootRight = props.overshootRight,overshootRight = _props$overshootRight === void 0 ? rightWidth > 0 : _props$overshootRight;
+
+      var transX = _reactNative.Animated.add(
+      rowTranslation,
+      dragX.interpolate({
+        inputRange: [0, friction],
+        outputRange: [0, 1] })).
+
+      interpolate({
+        inputRange: [
+        -rightWidth - (overshootRight ? 1 : overshootFriction),
+        -rightWidth,
+        leftWidth,
+        leftWidth + (overshootLeft ? 1 : overshootFriction)],
+
+        outputRange: [
+        -rightWidth - (overshootRight || overshootFriction > 1 ? 1 : 0),
+        -rightWidth,
+        leftWidth,
+        leftWidth + (overshootLeft || overshootFriction > 1 ? 1 : 0)] });
+
+
+      _this._transX = transX;
+      _this._showLeftAction =
+      leftWidth > 0 ?
+      transX.interpolate({
+        inputRange: [-1, 0, leftWidth],
+        outputRange: [0, 0, 1] }) :
+
+      new _reactNative.Animated.Value(0);
+      _this._leftActionTranslate = _this._showLeftAction.interpolate({
+        inputRange: [0, Number.MIN_VALUE],
+        outputRange: [-10000, 0],
+        extrapolate: 'clamp' });
+
+      _this._showRightAction =
+      rightWidth > 0 ?
+      transX.interpolate({
+        inputRange: [-rightWidth, 0, 1],
+        outputRange: [1, 0, 0] }) :
+
+      new _reactNative.Animated.Value(0);
+      _this._rightActionTranslate = _this._showRightAction.interpolate({
+        inputRange: [0, Number.MIN_VALUE],
+        outputRange: [-10000, 0],
+        extrapolate: 'clamp' });
+
+    };_this.
+
+    _onTapHandlerStateChange = function (_ref) {var nativeEvent = _ref.nativeEvent;
+      if (nativeEvent.oldState === _GestureHandler.State.ACTIVE) {
+        _this.close();
+      }
+    };_this.
+
+    _onHandlerStateChange = function (_ref2) {var nativeEvent = _ref2.nativeEvent;
+      if (nativeEvent.oldState === _GestureHandler.State.ACTIVE) {
+        _this._handleRelease(nativeEvent);
+      }
+    };_this.
+
+    _handleRelease = function (nativeEvent) {var
+      velocityX = nativeEvent.velocityX,dragX = nativeEvent.translationX;var _this$state =
+      _this.state,_this$state$leftWidth = _this$state.leftWidth,leftWidth = _this$state$leftWidth === void 0 ? 0 : _this$state$leftWidth,_this$state$rowWidth = _this$state.rowWidth,rowWidth = _this$state$rowWidth === void 0 ? 0 : _this$state$rowWidth,rowState = _this$state.rowState;var _this$state$rightOffs =
+      _this.state.rightOffset,rightOffset = _this$state$rightOffs === void 0 ? rowWidth : _this$state$rightOffs;
+      var rightWidth = rowWidth - rightOffset;var _this$props =
+
+
+
+
+      _this.props,friction = _this$props.friction,_this$props$leftThres = _this$props.leftThreshold,leftThreshold = _this$props$leftThres === void 0 ? leftWidth / 2 : _this$props$leftThres,_this$props$rightThre = _this$props.rightThreshold,rightThreshold = _this$props$rightThre === void 0 ? rightWidth / 2 : _this$props$rightThre;
+
+      var startOffsetX = _this._currentOffset() + dragX / friction;
+      var translationX = (dragX + DRAG_TOSS * velocityX) / friction;
+
+      var toValue = 0;
+      if (rowState === 0) {
+        if (translationX > leftThreshold) {
+          toValue = leftWidth;
+        } else if (translationX < -rightThreshold) {
+          toValue = -rightWidth;
+        }
+      } else if (rowState === 1) {
+
+        if (translationX > -leftThreshold) {
+          toValue = leftWidth;
+        }
+      } else {
+
+        if (translationX < rightThreshold) {
+          toValue = -rightWidth;
+        }
+      }
+
+      _this._animateRow(startOffsetX, toValue, velocityX / friction);
+    };_this.
+
+    _animateRow = function (fromValue, toValue, velocityX) {var _this$state2 =
+      _this.state,dragX = _this$state2.dragX,rowTranslation = _this$state2.rowTranslation;
+      dragX.setValue(0);
+      rowTranslation.setValue(fromValue);
+
+      _this.setState({ rowState: Math.sign(toValue) });
+      _reactNative.Animated.spring(rowTranslation, _objectSpread({
+        restSpeedThreshold: 1.7,
+        restDisplacementThreshold: 0.4,
+        velocity: velocityX,
+        bounciness: 0,
+        toValue: toValue,
+        useNativeDriver: _this.props.useNativeAnimations },
+      _this.props.animationOptions)).
+      start(function (_ref3) {var finished = _ref3.finished;
+        if (finished) {
+          if (toValue > 0 && _this.props.onSwipeableLeftOpen) {
+            _this.props.onSwipeableLeftOpen();
+          } else if (toValue < 0 && _this.props.onSwipeableRightOpen) {
+            _this.props.onSwipeableRightOpen();
+          }
+
+          if (toValue === 0) {
+            _this.props.onSwipeableClose && _this.props.onSwipeableClose();
+          } else {
+            _this.props.onSwipeableOpen && _this.props.onSwipeableOpen();
+          }
+        }
+      });
+      if (toValue > 0 && _this.props.onSwipeableLeftWillOpen) {
+        _this.props.onSwipeableLeftWillOpen();
+      } else if (toValue < 0 && _this.props.onSwipeableRightWillOpen) {
+        _this.props.onSwipeableRightWillOpen();
+      }
+
+      if (toValue === 0) {
+        _this.props.onSwipeableWillClose && _this.props.onSwipeableWillClose();
+      } else {
+        _this.props.onSwipeableWillOpen && _this.props.onSwipeableWillOpen();
+      }
+    };_this.
+
+    _onRowLayout = function (_ref4) {var nativeEvent = _ref4.nativeEvent;
+      _this.setState({ rowWidth: nativeEvent.layout.width });
+    };_this.
+
+    _currentOffset = function () {var _this$state3 =
+      _this.state,_this$state3$leftWidt = _this$state3.leftWidth,leftWidth = _this$state3$leftWidt === void 0 ? 0 : _this$state3$leftWidt,_this$state3$rowWidth = _this$state3.rowWidth,rowWidth = _this$state3$rowWidth === void 0 ? 0 : _this$state3$rowWidth,rowState = _this$state3.rowState;var _this$state$rightOffs2 =
+      _this.state.rightOffset,rightOffset = _this$state$rightOffs2 === void 0 ? rowWidth : _this$state$rightOffs2;
+      var rightWidth = rowWidth - rightOffset;
+      if (rowState === 1) {
+        return leftWidth;
+      } else if (rowState === -1) {
+        return -rightWidth;
+      }
+      return 0;
+    };_this.
+
+    close = function () {
+      _this._animateRow(_this._currentOffset(), 0);
+    };_this.
+
+    openLeft = function () {var _this$state$leftWidth2 =
+      _this.state.leftWidth,leftWidth = _this$state$leftWidth2 === void 0 ? 0 : _this$state$leftWidth2;
+      _this._animateRow(_this._currentOffset(), leftWidth);
+    };_this.
+
+    openRight = function () {var _this$state$rowWidth2 =
+      _this.state.rowWidth,rowWidth = _this$state$rowWidth2 === void 0 ? 0 : _this$state$rowWidth2;var _this$state$rightOffs3 =
+      _this.state.rightOffset,rightOffset = _this$state$rightOffs3 === void 0 ? rowWidth : _this$state$rightOffs3;
+      var rightWidth = rowWidth - rightOffset;
+      _this._animateRow(_this._currentOffset(), -rightWidth);
+    };var _dragX = new _reactNative.Animated.Value(0);_this.state = { dragX: _dragX, rowTranslation: new _reactNative.Animated.Value(0), rowState: 0, leftWidth: undefined, rightOffset: undefined, rowWidth: undefined };_this._updateAnimatedEvent(_props, _this.state);_this._onGestureEvent = _reactNative.Animated.event([{ nativeEvent: { translationX: _dragX } }], { useNativeDriver: _props.useNativeAnimations });return _this;}_createClass(Swipeable, [{ key: "UNSAFE_componentWillUpdate", value: function UNSAFE_componentWillUpdate(props, state) {if (this.props.friction !== props.friction || this.props.overshootLeft !== props.overshootLeft || this.props.overshootRight !== props.overshootRight || this.props.overshootFriction !== props.overshootFriction || this.state.leftWidth !== state.leftWidth || this.state.rightOffset !== state.rightOffset || this.state.rowWidth !== state.rowWidth) {this._updateAnimatedEvent(props, state);}} }, { key: "render", value: function render()
+
+    {var _this2 = this;var
+      rowState = this.state.rowState;var _this$props2 =
+      this.props,children = _this$props2.children,renderLeftActions = _this$props2.renderLeftActions,renderRightActions = _this$props2.renderRightActions;
+
+      var left = renderLeftActions &&
+      _react.default.createElement(_reactNative.Animated.View, {
+        style: [
+        styles.leftActions,
+        { transform: [{ translateX: this._leftActionTranslate }] }], __source: { fileName: _jsxFileName, lineNumber: 283 } },
+
+      renderLeftActions(this._showLeftAction, this._transX),
+      _react.default.createElement(_reactNative.View, {
+        onLayout: function onLayout(_ref5) {var nativeEvent = _ref5.nativeEvent;return (
+            _this2.setState({ leftWidth: nativeEvent.layout.x }));}, __source: { fileName: _jsxFileName, lineNumber: 289 } }));
+
+
+
+
+
+      var right = renderRightActions &&
+      _react.default.createElement(_reactNative.Animated.View, {
+        style: [
+        styles.rightActions,
+        { transform: [{ translateX: this._rightActionTranslate }] }], __source: { fileName: _jsxFileName, lineNumber: 298 } },
+
+      renderRightActions(this._showRightAction, this._transX),
+      _react.default.createElement(_reactNative.View, {
+        onLayout: function onLayout(_ref6) {var nativeEvent = _ref6.nativeEvent;return (
+            _this2.setState({ rightOffset: nativeEvent.layout.x }));}, __source: { fileName: _jsxFileName, lineNumber: 304 } }));
+
+
+
+
+
+      return (
+        _react.default.createElement(_GestureHandler.PanGestureHandler, _extends({},
+        this.props, {
+          minDeltaX: 10,
+          onGestureEvent: this._onGestureEvent,
+          onHandlerStateChange: this._onHandlerStateChange, __source: { fileName: _jsxFileName, lineNumber: 313 } }),
+        _react.default.createElement(_reactNative.Animated.View, {
+          onLayout: this._onRowLayout,
+          style: [styles.container, this.props.containerStyle], __source: { fileName: _jsxFileName, lineNumber: 318 } },
+        left,
+        right,
+        _react.default.createElement(_GestureHandler.TapGestureHandler, {
+          enabled: rowState !== 0,
+          onHandlerStateChange: this._onTapHandlerStateChange, __source: { fileName: _jsxFileName, lineNumber: 323 } },
+        _react.default.createElement(_reactNative.Animated.View, {
+          pointerEvents: rowState === 0 ? 'auto' : 'box-only',
+          style: [
+          {
+            transform: [{ translateX: this._transX }] },
+
+          this.props.childrenContainerStyle], __source: { fileName: _jsxFileName, lineNumber: 326 } },
+
+        children)))));
+
+
+
+
+
+    } }]);return Swipeable;}(_react.Component);exports.default = Swipeable;Swipeable.defaultProps = { friction: 1, overshootFriction: 1, useNativeAnimations: true };
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    overflow: 'hidden' },
+
+  leftActions: _objectSpread({},
+  _reactNative.StyleSheet.absoluteFillObject, {
+    flexDirection: 'row' }),
+
+  rightActions: _objectSpread({},
+  _reactNative.StyleSheet.absoluteFillObject, {
+    flexDirection: 'row-reverse' }) });

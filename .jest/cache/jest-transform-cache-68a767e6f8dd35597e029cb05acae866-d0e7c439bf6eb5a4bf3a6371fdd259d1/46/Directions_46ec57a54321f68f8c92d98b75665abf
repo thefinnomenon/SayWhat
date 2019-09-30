@@ -1,0 +1,4 @@
+116b74b8b63d4a4fc6f1c5a3e476a9fc
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _RNGestureHandlerModule = _interopRequireDefault(require("./RNGestureHandlerModule"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+
+_RNGestureHandlerModule.default.Direction;exports.default = _default;

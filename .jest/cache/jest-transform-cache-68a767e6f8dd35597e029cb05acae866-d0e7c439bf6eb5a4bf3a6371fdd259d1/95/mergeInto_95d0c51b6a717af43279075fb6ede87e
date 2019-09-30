@@ -1,0 +1,35 @@
+f8e645cf874f7e359fa5ada5e28d15ed
+
+
+
+
+
+
+
+"use strict";
+
+
+
+
+
+
+
+
+
+
+
+
+function mergeInto(one, two) {
+  require('./mergeHelpers').checkMergeIntoObjectArg(one);
+  if (two != null) {
+    require('./mergeHelpers').checkMergeObjectArg(two);
+    for (var key in two) {
+      if (!Object.prototype.hasOwnProperty.call(two, key)) {
+        continue;
+      }
+      one[key] = two[key];
+    }
+  }
+}
+
+module.exports = mergeInto;

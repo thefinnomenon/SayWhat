@@ -1,0 +1,55 @@
+26a168be427ca1b10f5c5e2fc5c71143
+"use strict";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _ExceptionsManager = require("./ExceptionsManager");
+
+
+
+
+
+function showErrorDialog(capturedError) {var
+  componentStack = capturedError.componentStack,error = capturedError.error;
+
+  var errorToHandle;
+
+
+  if (error instanceof Error) {
+    errorToHandle = error;
+  } else if (typeof error === 'string') {
+    errorToHandle = new _ExceptionsManager.SyntheticError(error);
+  } else {
+    errorToHandle = new _ExceptionsManager.SyntheticError('Unspecified error');
+  }
+  try {
+    errorToHandle.componentStack = componentStack;
+  } catch (e) {}
+  (0, _ExceptionsManager.handleException)(errorToHandle, false);
+
+
+
+
+
+  return false;
+}
+
+module.exports = { showErrorDialog: showErrorDialog };

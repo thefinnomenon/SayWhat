@@ -1,0 +1,47 @@
+9672f301c96a166af04382a03fbbe275
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _react = _interopRequireDefault(require("react"));
+var _reactNative = require("react-native");var _jsxFileName = "/Users/finn/Dev/Projects/Active/SayWhat/saywhat/node_modules/@react-navigation/native/dist/createKeyboardAwareNavigator.js";function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var _default =
+
+function _default(Navigator, navigatorConfig) {var _class, _temp;return _temp = _class = function (_React$Component) {_inherits(KeyboardAwareNavigator, _React$Component);function KeyboardAwareNavigator() {var _getPrototypeOf2;var _this;_classCallCheck(this, KeyboardAwareNavigator);for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(KeyboardAwareNavigator)).call.apply(_getPrototypeOf2, [this].concat(args)));_this.
+
+
+      _previouslyFocusedTextInput = null;_this.
+
+
+
+
+
+      _handleGestureBegin = function () {
+        _this._previouslyFocusedTextInput = _reactNative.TextInput.State.currentlyFocusedField();
+        if (_this._previouslyFocusedTextInput) {
+          _reactNative.TextInput.State.blurTextInput(_this._previouslyFocusedTextInput);
+        }
+        _this.props.onGestureBegin && _this.props.onGestureBegin();
+      };_this.
+
+      _handleGestureCanceled = function () {
+        if (_this._previouslyFocusedTextInput) {
+          _reactNative.TextInput.State.focusTextInput(_this._previouslyFocusedTextInput);
+        }
+        _this.props.onGestureCanceled && _this.props.onGestureCanceled();
+      };_this.
+
+      _handleGestureEnd = function () {
+        _this._previouslyFocusedTextInput = null;
+        _this.props.onGestureFinish && _this.props.onGestureFinish();
+      };_this.
+
+      _handleTransitionStart = function (transitionProps, prevTransitionProps) {
+
+
+
+        if (transitionProps.index !== prevTransitionProps.index) {
+          var currentField = _reactNative.TextInput.State.currentlyFocusedField();
+          if (currentField) {
+            _reactNative.TextInput.State.blurTextInput(currentField);
+          }
+        }
+
+        var onTransitionStart = _this.props.onTransitionStart || navigatorConfig.onTransitionStart;
+        onTransitionStart && onTransitionStart(transitionProps, prevTransitionProps);
+      };return _this;}_createClass(KeyboardAwareNavigator, [{ key: "render", value: function render() {return _react.default.createElement(Navigator, _extends({}, this.props, { onGestureBegin: this._handleGestureBegin, onGestureCanceled: this._handleGestureCanceled, onGestureEnd: this._handleGestureEnd, onTransitionStart: this._handleTransitionStart, __source: { fileName: _jsxFileName, lineNumber: 10 } }));} }]);return KeyboardAwareNavigator;}(_react.default.Component), _class.router = Navigator.router, _class.navigationOptions = Navigator.navigationOptions, _temp;};exports.default = _default;

@@ -1,0 +1,180 @@
+25e332bd21fbc8424fa73d9b9201ab2a
+
+
+
+
+
+
+
+
+
+'use strict';function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}
+
+
+
+
+
+
+
+
+var _uniqueId = 1;var
+
+
+
+AnimatedNode = function () {_createClass(AnimatedNode, [{ key: "__attach", value: function __attach()
+
+
+    {} }, { key: "__detach", value: function __detach()
+    {
+      if (this.__isNative && this.__nativeTag != null) {
+        require('../NativeAnimatedHelper').API.dropAnimatedNode(this.__nativeTag);
+        this.__nativeTag = undefined;
+      }
+    } }, { key: "__getValue", value: function __getValue()
+    {} }, { key: "__getAnimatedValue", value: function __getAnimatedValue()
+    {
+      return this.__getValue();
+    } }, { key: "__addChild", value: function __addChild(
+    child) {} }, { key: "__removeChild", value: function __removeChild(
+    child) {} }, { key: "__getChildren", value: function __getChildren()
+    {
+      return [];
+    } }]);
+
+
+
+
+
+
+  function AnimatedNode() {_classCallCheck(this, AnimatedNode);
+    this._listeners = {};
+  }_createClass(AnimatedNode, [{ key: "__makeNative", value: function __makeNative()
+
+    {
+      if (!this.__isNative) {
+        throw new Error('This node cannot be made a "native" animated node');
+      }
+
+      if (this.hasListeners()) {
+        this._startListeningToNativeValueUpdates();
+      }
+    } }, { key: "addListener", value: function addListener(
+
+
+
+
+
+
+
+
+    callback) {
+      var id = String(_uniqueId++);
+      this._listeners[id] = callback;
+      if (this.__isNative) {
+        this._startListeningToNativeValueUpdates();
+      }
+      return id;
+    } }, { key: "removeListener", value: function removeListener(
+
+
+
+
+
+
+
+    id) {
+      delete this._listeners[id];
+      if (this.__isNative && !this.hasListeners()) {
+        this._stopListeningForNativeValueUpdates();
+      }
+    } }, { key: "removeAllListeners", value: function removeAllListeners()
+
+
+
+
+
+
+    {
+      this._listeners = {};
+      if (this.__isNative) {
+        this._stopListeningForNativeValueUpdates();
+      }
+    } }, { key: "hasListeners", value: function hasListeners()
+
+    {
+      return !!Object.keys(this._listeners).length;
+    } }, { key: "_startListeningToNativeValueUpdates", value: function _startListeningToNativeValueUpdates()
+
+    {var _this = this;
+      if (
+      this.__nativeAnimatedValueListener &&
+      !this.__shouldUpdateListenersForNewNativeTag)
+      {
+        return;
+      }
+
+      if (this.__shouldUpdateListenersForNewNativeTag) {
+        this.__shouldUpdateListenersForNewNativeTag = false;
+        this._stopListeningForNativeValueUpdates();
+      }
+
+      require('../NativeAnimatedHelper').API.startListeningToAnimatedNodeValue(this.__getNativeTag());
+      this.__nativeAnimatedValueListener = require('../NativeAnimatedHelper').nativeEventEmitter.addListener(
+      'onAnimatedValueUpdate',
+      function (data) {
+        if (data.tag !== _this.__getNativeTag()) {
+          return;
+        }
+        _this._onAnimatedValueUpdateReceived(data.value);
+      });
+
+    } }, { key: "_onAnimatedValueUpdateReceived", value: function _onAnimatedValueUpdateReceived(
+
+    value) {
+      this.__callListeners(value);
+    } }, { key: "__callListeners", value: function __callListeners(
+
+    value) {
+      for (var _key in this._listeners) {
+        this._listeners[_key]({ value: value });
+      }
+    } }, { key: "_stopListeningForNativeValueUpdates", value: function _stopListeningForNativeValueUpdates()
+
+    {
+      if (!this.__nativeAnimatedValueListener) {
+        return;
+      }
+
+      this.__nativeAnimatedValueListener.remove();
+      this.__nativeAnimatedValueListener = null;
+      require('../NativeAnimatedHelper').API.stopListeningToAnimatedNodeValue(this.__getNativeTag());
+    } }, { key: "__getNativeTag", value: function __getNativeTag()
+
+    {
+      require('../NativeAnimatedHelper').assertNativeAnimatedModule();
+      require('invariant')(
+      this.__isNative,
+      'Attempt to get native tag from node not marked as "native"');
+
+      if (this.__nativeTag == null) {
+        var nativeTag = require('../NativeAnimatedHelper').generateNewNodeTag();
+        this.__nativeTag = nativeTag;
+        require('../NativeAnimatedHelper').API.createAnimatedNode(
+        nativeTag,
+        this.__getNativeConfig());
+
+        this.__shouldUpdateListenersForNewNativeTag = true;
+      }
+      return this.__nativeTag;
+    } }, { key: "__getNativeConfig", value: function __getNativeConfig()
+    {
+      throw new Error(
+      'This JS animated node type cannot be used as native animated node');
+
+    } }, { key: "toJSON", value: function toJSON()
+    {
+      return this.__getValue();
+    } }]);return AnimatedNode;}();
+
+
+module.exports = AnimatedNode;

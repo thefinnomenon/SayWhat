@@ -1,0 +1,238 @@
+058d525f0394d36b62984e039c206f40
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/finn/Dev/Projects/Active/SayWhat/saywhat/node_modules/react-native/Libraries/Components/Button.js";function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(source, true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(source).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Button = function (_React$Component) {_inherits(Button, _React$Component);function Button() {_classCallCheck(this, Button);return _possibleConstructorReturn(this, _getPrototypeOf(Button).apply(this, arguments));}_createClass(Button, [{ key: "render", value: function render()
+    {var _this$props =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      this.props,accessibilityLabel = _this$props.accessibilityLabel,color = _this$props.color,onPress = _this$props.onPress,touchSoundDisabled = _this$props.touchSoundDisabled,title = _this$props.title,hasTVPreferredFocus = _this$props.hasTVPreferredFocus,nextFocusDown = _this$props.nextFocusDown,nextFocusForward = _this$props.nextFocusForward,nextFocusLeft = _this$props.nextFocusLeft,nextFocusRight = _this$props.nextFocusRight,nextFocusUp = _this$props.nextFocusUp,disabled = _this$props.disabled,testID = _this$props.testID;
+      var buttonStyles = [styles.button];
+      var textStyles = [styles.text];
+      if (color) {
+        if (require('../Utilities/Platform').OS === 'ios') {
+          textStyles.push({ color: color });
+        } else {
+          buttonStyles.push({ backgroundColor: color });
+        }
+      }
+      var accessibilityStates = [];
+      if (disabled) {
+        buttonStyles.push(styles.buttonDisabled);
+        textStyles.push(styles.textDisabled);
+        accessibilityStates.push('disabled');
+      }
+      require('invariant')(
+      typeof title === 'string',
+      'The title prop of a Button must be a string');
+
+      var formattedTitle =
+      require('../Utilities/Platform').OS === 'android' ? title.toUpperCase() : title;
+      var Touchable =
+      require('../Utilities/Platform').OS === 'android' ? require('./Touchable/TouchableNativeFeedback') : require('./Touchable/TouchableOpacity');
+      return (
+        require('react').createElement(Touchable, {
+          accessibilityLabel: accessibilityLabel,
+          accessibilityRole: "button",
+          accessibilityStates: accessibilityStates,
+          hasTVPreferredFocus: hasTVPreferredFocus,
+          nextFocusDown: nextFocusDown,
+          nextFocusForward: nextFocusForward,
+          nextFocusLeft: nextFocusLeft,
+          nextFocusRight: nextFocusRight,
+          nextFocusUp: nextFocusUp,
+          testID: testID,
+          disabled: disabled,
+          onPress: onPress,
+          touchSoundDisabled: touchSoundDisabled, __source: { fileName: _jsxFileName, lineNumber: 171 } },
+        require('react').createElement(require('./View/View'), { style: buttonStyles, __source: { fileName: _jsxFileName, lineNumber: 185 } },
+        require('react').createElement(require('../Text/Text'), { style: textStyles, disabled: disabled, __source: { fileName: _jsxFileName, lineNumber: 186 } },
+        formattedTitle))));
+
+
+
+
+    } }]);return Button;}(require('react').Component);
+
+
+var styles = require('../StyleSheet/StyleSheet').create({
+  button: require('../Utilities/Platform').select({
+    ios: {},
+    android: {
+      elevation: 4,
+
+      backgroundColor: '#2196F3',
+      borderRadius: 2 } }),
+
+
+  text: _objectSpread({
+    textAlign: 'center',
+    padding: 8 },
+  require('../Utilities/Platform').select({
+    ios: {
+
+      color: '#007AFF',
+      fontSize: 18 },
+
+    android: {
+      color: 'white',
+      fontWeight: '500' } })),
+
+
+
+  buttonDisabled: require('../Utilities/Platform').select({
+    ios: {},
+    android: {
+      elevation: 0,
+      backgroundColor: '#dfdfdf' } }),
+
+
+  textDisabled: require('../Utilities/Platform').select({
+    ios: {
+      color: '#cdcdcd' },
+
+    android: {
+      color: '#a1a1a1' } }) });
+
+
+
+
+module.exports = Button;

@@ -1,0 +1,27 @@
+a7cf4909641755fd42d61bcbab26677e
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+var ensurePositiveDelayProps = function ensurePositiveDelayProps(props) {
+  require('invariant')(
+  !(
+  props.delayPressIn < 0 ||
+  props.delayPressOut < 0 ||
+  props.delayLongPress < 0),
+
+  'Touchable components cannot have negative delay properties');
+
+};
+
+module.exports = ensurePositiveDelayProps;
