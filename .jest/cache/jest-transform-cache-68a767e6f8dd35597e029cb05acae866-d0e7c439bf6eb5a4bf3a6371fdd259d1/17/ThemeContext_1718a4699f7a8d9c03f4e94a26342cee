@@ -1,2 +1,0 @@
-1ac050f4016a54707e008b501e26c12c
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var React = require("@babel/runtime/helpers/interopRequireWildcard")(require("react"));var _default = React.createContext('light');exports.default = _default;

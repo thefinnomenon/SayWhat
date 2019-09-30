@@ -1,6 +1,0 @@
-6c572edaf13863b9e498f149ac4bc255
-"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = gestureHandlerRootHOC;function gestureHandlerRootHOC(Component) {
-
-
-  return Component;
-}
