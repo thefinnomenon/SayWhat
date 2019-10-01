@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components/native';
+import ThemeManager from './contexts/ManageThemeContext';
+import { I18nextProvider, useTranslation } from 'react-i18next';
+import i18 from './i18n';
+import { useScreens } from 'react-native-screens';
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import HomeScreen from './src/screens/HomeScreen';
-import GameScreen from './src/screens/GameScreen';
-import DecksScreen from './src/screens/DecksScreen';
-import RoundScreen from './src/screens/RoundScreen';
+import MainStackNavigator from './src/navigators/MainStackNavigator';
 
-const AppNavigator = createStackNavigator({
-  Home: HomeScreen,
-  Decks: DecksScreen,
-  Game: GameScreen,
-  Round: RoundScreen,
-});
+const AppContainer = createAppContainer(MainStackNavigator);
 
-export default createAppContainer(AppNavigator);
+const Wrapper = () => {
+  const themeContext = useContext(ThemeContext);
+  const { t } = useTranslation();
+
+  return <AppContainer screenProps={{ theme: themeContext, t }} />;
+};
+
+const App = () => {
+  useScreens();
+
+  return (
+    <ThemeManager>
+      <I18nextProvider i18n={i18}>
+        <Wrapper />
+      </I18nextProvider>
+    </ThemeManager>
+  );
+};
+
+export default App;
