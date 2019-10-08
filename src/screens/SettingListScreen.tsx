@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigationParam } from 'react-navigation-hooks';
@@ -44,7 +44,7 @@ SettingListScreen.navigationOptions = ({ navigation }) => ({
 
 const Container = styled.View<Theme>`
   flex: 1;
-  background: ${(props: Theme) => props.theme.colors.background};
+  background: ${props => props.theme.colors.background};
 `;
 
 export default SettingListScreen;

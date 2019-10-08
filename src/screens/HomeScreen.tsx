@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
-import { Text, Button } from 'react-native';
+import { Button } from 'react-native';
 import { useNavigation } from 'react-navigation-hooks';
 
-type Props = {} & typeof defaultProps;
-
-const defaultProps = Object.freeze({});
-const initialState = Object.freeze({});
-
-export const HomeScreen = (props: Props) => {
+export const HomeScreen = () => {
   const { navigate } = useNavigation();
 
   return (
@@ -47,7 +42,5 @@ const Buttons = styled.View`
 HomeScreen.navigationOptions = {
   header: null,
 };
-
-HomeScreen.defaultProps = defaultProps;
 
 export default HomeScreen;

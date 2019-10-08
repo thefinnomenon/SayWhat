@@ -6,6 +6,7 @@ import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../contexts/ManageThemeContext';
 import i18n from 'i18next';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import Row from '../components/Row';
 
 const languages = [
@@ -32,6 +33,7 @@ export const SettingsScreen = () => {
     <Container>
       <ScrollView>
         <Row
+          icon={<StyledIcon name="globe-americas" />}
           title={t('Language')}
           onPress={() =>
             navigate('SettingList', {
@@ -49,6 +51,7 @@ export const SettingsScreen = () => {
           showChevron
         />
         <Row
+          icon={<StyledIcon name="eye" />}
           title={t('Theme')}
           onPress={() =>
             navigate('SettingList', {
@@ -78,12 +81,18 @@ SettingsScreen.navigationOptions = ({
 
 const Container = styled.View<Theme>`
   flex: 1;
-  background: ${(props: Theme) => props.theme.colors.background};
+  background: ${props => props.theme.colors.background};
 `;
 
-const Value = styled.Text`
-  color: ${(props: Theme) => props.theme.colors.textAlt};
+const Value = styled.Text<Theme>`
+  color: ${props => props.theme.colors.textAlt};
   font-size: 18;
+`;
+
+const StyledIcon = styled(Icon)<Theme>`
+  font-size: 20;
+  margin-right: 12px;
+  color: ${props => props.theme.colors.text};
 `;
 
 export default SettingsScreen;
