@@ -5,7 +5,7 @@ export interface ThemeContext {
   setMode(mode: string): void;
 }
 
-export interface Theme {
+export type Theme = {
   theme: {
     nav: {
       background: string;
@@ -28,7 +28,7 @@ export interface Theme {
       textAlt: string;
     };
   };
-}
+};
 
 export type ScreenProps = {
   t: (str: string) => void;
