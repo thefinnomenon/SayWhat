@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+>
+  <RCTScrollView>
+    <View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 46,
+            "justifyContent": "space-between",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          isSelected={false}
+          style={
+            Array [
+              Object {
+                "color": "#202020",
+                "fontSize": 18,
+                "fontWeight": "normal",
+                "marginLeft": 8,
+              },
+            ]
+          }
+        >
+          One
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#bdbdbd",
+              "height": 1,
+              "marginBottom": "auto",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": "auto",
+              "width": "95%",
+            },
+          ]
+        }
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 46,
+            "justifyContent": "space-between",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          isSelected={true}
+          style={
+            Array [
+              Object {
+                "color": "#202020",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "marginLeft": 8,
+              },
+            ]
+          }
+        >
+          Two
+        </Text>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 12,
+              },
+              Array [
+                Object {
+                  "color": "#202020",
+                  "fontSize": 20,
+                  "marginRight": 12,
+                },
+              ],
+              Object {
+                "fontFamily": "FontAwesome5Free-Regular",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {
+                "fontWeight": "400",
+              },
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#bdbdbd",
+              "height": 1,
+              "marginBottom": "auto",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": "auto",
+              "width": "95%",
+            },
+          ]
+        }
+      />
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 46,
+            "justifyContent": "space-between",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          isSelected={false}
+          style={
+            Array [
+              Object {
+                "color": "#202020",
+                "fontSize": 18,
+                "fontWeight": "normal",
+                "marginLeft": 8,
+              },
+            ]
+          }
+        >
+          Three
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#bdbdbd",
+              "height": 1,
+              "marginBottom": "auto",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": "auto",
+              "width": "95%",
+            },
+          ]
+        }
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;

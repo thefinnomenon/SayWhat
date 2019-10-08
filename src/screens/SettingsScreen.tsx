@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Theme, ScreenProps } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigation } from 'react-navigation-hooks';
