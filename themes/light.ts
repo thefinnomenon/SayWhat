@@ -3,11 +3,11 @@ import { Theme } from '../types';
 const light: Theme = {
   theme: {
     nav: {
-      background: '#fff',
+      background: '#f8f8f8',
       tintColor: '#000',
       activeTintColor: '#000',
       inactiveTintColor: '#a9a9a9',
-      borderColor: '#a7a7aa',
+      borderColor: '#e0e0e0',
       borderWidth: 1,
       titleStyle: {
         fontSize: 18,
@@ -15,11 +15,12 @@ const light: Theme = {
       },
     },
     colors: {
-      background: '#ededed',
-      border: '#bdbdbd',
-      backgroundAlt: '#eaeaeb',
+      background: '#fff',
+      border: '#e8e8e8',
+      backgroundAlt: '#fff',
       borderAlt: '#bdbdbd',
-      text: '#171717',
+      text: '#202020',
+      textAlt: '#999',
     },
   },
 };

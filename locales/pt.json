@@ -5,6 +5,9 @@
   "Hello": "Olá",
   "English": "Inglês",
   "Portuguese": "Português",
-  "Toggle Dark Mode": "Alternar Modo Escuro",
-  "Storybook": "Storybook"
+  "Language": "Língua",
+  "Theme": "Tema",
+  "Light": "Clara",
+  "Dark": "Escura",
+  "System Default": "Padrão da Sistema"
 }

@@ -3,7 +3,7 @@ import { Theme } from '../types';
 const dark: Theme = {
   theme: {
     nav: {
-      background: '#2a2a2a',
+      background: '#202020',
       tintColor: '#fff',
       activeTintColor: '#fff',
       inactiveTintColor: '#A9A9A9',
@@ -15,11 +15,12 @@ const dark: Theme = {
       },
     },
     colors: {
-      background: '#2E3440',
-      border: '#575c66',
-      backgroundAlt: '#575c66',
-      borderAlt: '#2E3440',
+      background: '#2a2a2a',
+      border: '#3a3a3a',
+      backgroundAlt: '#2a2a2a',
+      borderAlt: '#606060',
       text: '#ECEFF4',
+      textAlt: '#b8b8b8',
     },
   },
 };

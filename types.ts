@@ -2,7 +2,7 @@ export type ThemeMode = 'light' | 'dark';
 
 export interface ThemeContext {
   mode: ThemeMode;
-  toggle(): void;
+  setMode(mode: string): void;
 }
 
 export interface Theme {
@@ -25,6 +25,7 @@ export interface Theme {
       backgroundAlt: string;
       borderAlt: string;
       text: string;
+      textAlt: string;
     };
   };
 }

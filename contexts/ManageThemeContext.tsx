@@ -7,7 +7,10 @@ import darkTheme from '../themes/dark';
 
 const defaultMode = 'light';
 
-const ManageThemeContext = createContext<Partial<ThemeContext>>({});
+const ManageThemeContext = createContext<ThemeContext>({
+  mode: defaultMode,
+  setMode: mode => console.log(mode),
+});
 
 export const useTheme = () => React.useContext(ManageThemeContext);
 
@@ -16,13 +19,13 @@ const ManageThemeProvider: FC = ({ children }) => {
     mode: defaultMode,
   });
 
-  const toggle = () => {
-    setThemeState({ mode: themeState.mode === 'light' ? 'dark' : 'light' });
+  const setMode = (mode: ThemeMode) => {
+    setThemeState({ mode });
   };
 
   return (
     <ManageThemeContext.Provider
-      value={{ mode: themeState.mode as ThemeMode, toggle }}>
+      value={{ mode: themeState.mode as ThemeMode, setMode }}>
       <ThemeProvider
         theme={themeState.mode === 'dark' ? darkTheme.theme : lightTheme.theme}>
         <>
