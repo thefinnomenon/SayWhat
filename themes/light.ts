@@ -16,6 +16,8 @@ const light: Theme = {
     },
     colors: {
       background: '#fff',
+      primary: '#50b7ff',
+      secondary: '#5c8bad',
       border: '#e8e8e8',
       backgroundAlt: '#fff',
       borderAlt: '#bdbdbd',

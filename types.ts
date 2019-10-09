@@ -21,6 +21,8 @@ export type Theme = {
     };
     colors: {
       background: string;
+      primary: string;
+      secondary: string;
       border: string;
       backgroundAlt: string;
       borderAlt: string;
