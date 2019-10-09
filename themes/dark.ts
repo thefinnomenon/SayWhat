@@ -16,6 +16,8 @@ const dark: Theme = {
     },
     colors: {
       background: '#2a2a2a',
+      primary: '#50b7ff',
+      secondary: '#5c8bad',
       border: '#3a3a3a',
       backgroundAlt: '#2a2a2a',
       borderAlt: '#606060',
