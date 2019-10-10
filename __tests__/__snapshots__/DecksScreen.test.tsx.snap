@@ -1,7 +1,984 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<Text>
-  Decks Screen
-</Text>
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+>
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexDirection": "row",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+              "marginBottom": 4,
+              "marginLeft": 4,
+              "marginRight": 4,
+              "marginTop": 4,
+            },
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/everything.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              Everything
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/entertainment.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              Media
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/history.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              History
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/sports.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              Sports & Games
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/geography.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              Geography
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/house.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              Around The House
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/food_and_drink.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              Food & Drink
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 250,
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+              "opacity": 1,
+              "width": "45%",
+            }
+          }
+        >
+          <View
+            accessibilityIgnoresInvertColors={true}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "flex-end",
+                },
+              ]
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../assets/images/animals_and_plants.jpeg",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  },
+                  Object {
+                    "borderRadius": 10,
+                  },
+                ]
+              }
+            />
+            <BVLinearGradient
+              colors={
+                Array [
+                  0,
+                  3003121664,
+                ]
+              }
+              endPoint={
+                Object {
+                  "x": 0,
+                  "y": 1,
+                }
+              }
+              locations={null}
+              startPoint={
+                Object {
+                  "x": 0,
+                  "y": 0.3,
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "borderRadius": 10,
+                    "bottom": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                  },
+                ]
+              }
+            />
+            <Text
+              adjustsFontSizeToFit={true}
+              numberOfLines={2}
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontSize": 28,
+                    "fontWeight": "bold",
+                    "marginBottom": 4,
+                    "paddingBottom": 8,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                  },
+                ]
+              }
+            >
+              Plants & Animals
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
 `;

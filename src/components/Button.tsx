@@ -5,10 +5,12 @@ import styled from 'styled-components/native';
 type Props = {
   title: string;
   onPress(): void;
+  disabled?: boolean;
+  style?: {};
 };
 
-export const Button = ({ title, onPress }: Props) => (
-  <Container onPress={() => onPress()}>
+export const Button = ({ title, onPress, disabled, style }: Props) => (
+  <Container disabled={disabled} onPress={() => onPress()} style={style}>
     <Title>{title}</Title>
   </Container>
 );
@@ -19,14 +21,12 @@ const Container = styled.TouchableOpacity<Theme>`
   align-content: center;
   background: ${props => props.theme.colors.primary};
   border-radius: 10px;
-  border-width: 1px;
-  border-color: ${props => props.theme.colors.primary};
-  margin: 10px;
 `;
 
 const Title = styled.Text<Theme>`
   color: ${props => props.theme.colors.background};
   font-size: 18;
+  font-weight: bold;
   text-align: center;
 `;
 

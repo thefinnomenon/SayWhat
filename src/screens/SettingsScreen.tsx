@@ -25,10 +25,6 @@ export const SettingsScreen = () => {
   const { t } = useTranslation();
   const { navigate } = useNavigation();
 
-  const capitalize = (str: string) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
-
   return (
     <Container>
       <ScrollView>
@@ -47,7 +43,9 @@ export const SettingsScreen = () => {
               },
             })
           }
-          renderAccessory={() => <Value>{i18n.language.toUpperCase()}</Value>}
+          renderAccessory={() => (
+            <Value transform="uppercase">{i18n.language}</Value>
+          )}
           showChevron
         />
         <Row
@@ -63,7 +61,9 @@ export const SettingsScreen = () => {
               },
             })
           }
-          renderAccessory={() => <Value>{t(capitalize(theme.mode))}</Value>}
+          renderAccessory={() => (
+            <Value transform="capitalize">{t(theme.mode)}</Value>
+          )}
           showChevron
         />
       </ScrollView>
@@ -84,8 +84,12 @@ const Container = styled.View<Theme>`
   background: ${props => props.theme.colors.background};
 `;
 
-const Value = styled.Text<Theme>`
+type ValueProps = {
+  transform: 'uppercase' | 'lowercase' | 'capitalize' | 'none';
+} & Theme;
+const Value = styled.Text<ValueProps>`
   color: ${props => props.theme.colors.textAlt};
+  text-transform: ${props => props.transform || 'none'};
   font-size: 18;
 `;
 

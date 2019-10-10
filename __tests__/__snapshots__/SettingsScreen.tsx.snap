@@ -121,11 +121,13 @@ exports[`renders correctly 1`] = `
                   Object {
                     "color": "#999",
                     "fontSize": 18,
+                    "textTransform": "uppercase",
                   },
                 ]
               }
+              transform="uppercase"
             >
-              EN-US
+              en-US
             </Text>
           </View>
           <Text
@@ -264,11 +266,13 @@ exports[`renders correctly 1`] = `
                   Object {
                     "color": "#999",
                     "fontSize": 18,
+                    "textTransform": "capitalize",
                   },
                 ]
               }
+              transform="capitalize"
             >
-              Light
+              light
             </Text>
           </View>
           <Text
