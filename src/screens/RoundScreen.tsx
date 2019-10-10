@@ -58,6 +58,16 @@ export const RoundScreen = () => {
     setScoreWasUpdated(true);
   };
 
+  const onRoundComplete = () => {
+    setRound(round + 1);
+    setScoreWasUpdated(false);
+    navigate('Round');
+  };
+
+  const startRound = () => {
+    navigate('Game', { title: `Round ${round}`, words, onRoundComplete });
+  };
+
   return (
     <>
       <Container>
@@ -87,7 +97,7 @@ export const RoundScreen = () => {
       <BottomButton
         disabled={!scoreWasUpdated}
         title="START ROUND"
-        onPress={() => navigate('Game', { title: `Round ${round}`, words })}
+        onPress={() => startRound()}
       />
     </>
   );

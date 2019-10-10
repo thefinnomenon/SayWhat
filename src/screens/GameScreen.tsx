@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { Button } from '../components/Button';
@@ -7,12 +7,18 @@ import { Button as Btn, Alert } from 'react-native';
 
 export const GameScreen = () => {
   const words = useNavigationParam('words');
+  const onRoundComplete = useNavigationParam('onRoundComplete');
 
   const getRandomWord = () => {
     return words[Math.round(Math.round(Math.random() * (words.length - 1)))];
   };
 
   const [word, setWord] = useState(getRandomWord());
+
+  useEffect(() => {
+    const timer = setTimeout(() => onRoundComplete(), 5000);
+    return () => clearTimeout(timer);
+  }, [onRoundComplete]);
 
   return (
     <>
