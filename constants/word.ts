@@ -1,4 +1,4 @@
-export const Entertainment = [
+export const Media = [
   'DVD Player',
   'VCR',
   'Walkman',

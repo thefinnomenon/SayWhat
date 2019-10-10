@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigation } from 'react-navigation-hooks';
@@ -7,10 +7,12 @@ import { useTranslation } from 'react-i18next';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import Button from '../components/Button';
 import Score from '../components/Score';
+import { Button as Btn, Alert } from 'react-native';
 
 const SCORE_GOAL = 5;
 
 const initialState = Object.freeze({
+  words: [],
   winner: '',
   round: 1,
   teamA: 0,
@@ -19,6 +21,9 @@ const initialState = Object.freeze({
 });
 
 export const RoundScreen = () => {
+  // TODO: get category form navigation params and load that wordlist
+  const category = 'media';
+  const [words, setWords] = useState(initialState.words);
   const [winner, setWinner] = useState(initialState.winner);
   const [round, setRound] = useState(initialState.round);
   const [teamA, setTeamA] = useState(initialState.teamA);
@@ -26,6 +31,11 @@ export const RoundScreen = () => {
   const [scoreWasUpdated, setScoreWasUpdated] = useState(
     initialState.scoreWasUpdated,
   );
+
+  useEffect(() => {
+    const { default: wordlist } = require('../../constants/wordlists/media');
+    setWords(wordlist);
+  }, [category]);
 
   const { navigate } = useNavigation();
   const { t } = useTranslation();
@@ -77,7 +87,7 @@ export const RoundScreen = () => {
       <BottomButton
         disabled={!scoreWasUpdated}
         title="START ROUND"
-        onPress={() => navigate('Game')}
+        onPress={() => navigate('Game', { title: `Round ${round}`, words })}
       />
     </>
   );
@@ -127,8 +137,39 @@ const Spacer = styled.View<SpacerProps>`
   flex: ${props => props.flex};
 `;
 
-RoundScreen.navigationOptions = {
+// @ts-ignore: react-navigation has messed up types
+const quitConfirmation = navigation =>
+  Alert.alert(
+    'Quit Confirmation',
+    'Are you sure you want to quit the current game?',
+    [
+      {
+        text: 'Cancel',
+        style: 'cancel',
+      },
+      {
+        text: 'Yes',
+        onPress: () => navigation.navigate('Home'),
+      },
+    ],
+    { cancelable: true },
+  );
+
+// @ts-ignore: react-navigation has messed up types
+RoundScreen.navigationOptions = ({ navigation, screenProps }) => ({
   title: '',
-};
+  headerTintColor: screenProps.theme.colors.text,
+  headerStyle: {
+    backgroundColor: screenProps.theme.colors.background,
+    borderBottomWidth: 0,
+  },
+  headerLeft: (
+    <Btn
+      onPress={() => quitConfirmation(navigation)}
+      title="Quit"
+      color={screenProps.theme.colors.textAlt}
+    />
+  ),
+});
 
 export default RoundScreen;
