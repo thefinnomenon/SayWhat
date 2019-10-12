@@ -75,7 +75,7 @@ Array [
       Object {
         "alignContent": "center",
         "backgroundColor": "#50b7ff",
-        "borderRadius": 10,
+        "borderRadius": 0,
         "bottom": 0,
         "flexBasis": 0,
         "flexGrow": 1,

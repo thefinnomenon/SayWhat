@@ -10,6 +10,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "@react-native-community/audio-toolkit": "^2.0.2",
     "add": "^2.0.6",
     "i18next": "^17.0.17",
     "react": "16.9.0",

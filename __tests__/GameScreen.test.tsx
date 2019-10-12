@@ -19,6 +19,16 @@ jest.mock('react-navigation-hooks', () => {
   };
 });
 
+jest.mock('@react-native-community/audio-toolkit', () => {
+  return {
+    Player: () => ({
+      play: jest.fn(),
+      stop: jest.fn(),
+      destory: jest.fn(),
+    }),
+  };
+});
+
 const mathRandomSpy = jest.spyOn(Math, 'random');
 mathRandomSpy.mockImplementation(() => 0.5);
 

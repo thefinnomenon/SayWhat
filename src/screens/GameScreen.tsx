@@ -3,7 +3,10 @@ import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { Button } from '../components/Button';
 import { useNavigationParam } from 'react-navigation-hooks';
+import { Player } from '@react-native-community/audio-toolkit';
 import { Button as Btn, Alert } from 'react-native';
+
+const ROUND_LENGTH_MS = 54000;
 
 export const GameScreen = () => {
   const words = useNavigationParam('words');
@@ -14,11 +17,30 @@ export const GameScreen = () => {
   };
 
   const [word, setWord] = useState(getRandomWord());
+  const [isPlayable, setIsPlayable] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => onRoundComplete(), 5000);
+    const timer = setTimeout(() => onRoundComplete(), ROUND_LENGTH_MS);
     return () => clearTimeout(timer);
   }, [onRoundComplete]);
+
+  useEffect(() => {
+    const playableTimer = setTimeout(
+      () => setIsPlayable(false),
+      ROUND_LENGTH_MS - 1000,
+    );
+    return () => clearTimeout(playableTimer);
+  }, []);
+
+  useEffect(() => {
+    const beep = new Player('beep.mp3', { autoDestroy: false });
+    beep.play();
+    const beepRateTimeout = setTimeout(() => beep.stop(), ROUND_LENGTH_MS);
+    return () => {
+      clearTimeout(beepRateTimeout);
+      beep.destroy();
+    };
+  }, []);
 
   return (
     <>
@@ -28,7 +50,11 @@ export const GameScreen = () => {
         </WordContainer>
         <Spacer flex={3} />
       </Container>
-      <BottomButton title="NEXT" onPress={() => setWord(getRandomWord())} />
+      <BottomButton
+        disabled={!isPlayable}
+        title="NEXT"
+        onPress={() => setWord(getRandomWord())}
+      />
     </>
   );
 };
@@ -77,6 +103,7 @@ const BottomButton = styled(Button)<Theme>`
   left: 0;
   right: 0;
   height: 80px;
+  border-radius: 0;
   background: ${props => props.theme.colors.primary};
 `;
 

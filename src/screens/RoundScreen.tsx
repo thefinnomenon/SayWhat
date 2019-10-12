@@ -21,7 +21,7 @@ const initialState = Object.freeze({
 });
 
 export const RoundScreen = () => {
-  // TODO: get category form navigation params and load that wordlist
+  // TODO: get category from navigation params and load that wordlist
   const category = 'media';
   const [words, setWords] = useState(initialState.words);
   const [winner, setWinner] = useState(initialState.winner);
@@ -68,6 +68,44 @@ export const RoundScreen = () => {
     navigate('Game', { title: `Round ${round}`, words, onRoundComplete });
   };
 
+  const restartGame = () => {
+    setRound(initialState.round);
+    setWinner(initialState.winner);
+    setTeamA(initialState.teamA);
+    setTeamB(initialState.teamB);
+    setScoreWasUpdated(initialState.scoreWasUpdated);
+    // TODO: On restart, when coming back from first round, it increments the old round count
+    navigate('Game', { title: `Round ${1}`, words, onRoundComplete });
+  };
+
+  const startButton = () => {
+    if (round === 1) {
+      return (
+        <BottomButton
+          disabled={!scoreWasUpdated}
+          title="START GAME"
+          onPress={() => startRound()}
+        />
+      );
+    }
+    if (winner !== '') {
+      return (
+        <BottomButton
+          disabled={!scoreWasUpdated}
+          title="START NEW GAME"
+          onPress={() => restartGame()}
+        />
+      );
+    }
+    return (
+      <BottomButton
+        disabled={!scoreWasUpdated}
+        title="START ROUND"
+        onPress={() => startRound()}
+      />
+    );
+  };
+
   return (
     <>
       <Container>
@@ -94,11 +132,7 @@ export const RoundScreen = () => {
         </ScoreContainer>
         <Spacer flex={2} />
       </Container>
-      <BottomButton
-        disabled={!scoreWasUpdated}
-        title="START ROUND"
-        onPress={() => startRound()}
-      />
+      {startButton()}
     </>
   );
 };
@@ -137,6 +171,7 @@ const BottomButton = styled(Button)<Theme>`
   left: 0;
   right: 0;
   height: 80px;
+  border-radius: 0;
   background: ${props => props.theme.colors.primary};
 `;
 

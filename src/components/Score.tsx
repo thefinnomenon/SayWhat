@@ -30,15 +30,17 @@ const ScoreDisplayContainer = styled.TouchableOpacity<Theme>`
   justify-content: center;
   align-items: center;
   padding: 4px;
+  border-radius: 10;
   background: ${props => props.theme.colors.primary};
 `;
 
 const ScoreContainer = styled.View<Theme>`
   flex: 1;
-  width: 80%;
+  width: 85%;
   margin: 10px;
   justify-content: center;
   align-items: center;
+  border-radius: 10;
   background: ${props => props.theme.colors.background};
 `;
 
