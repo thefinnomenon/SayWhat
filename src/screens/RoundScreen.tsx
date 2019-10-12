@@ -8,6 +8,7 @@ import ConfettiCannon from 'react-native-confetti-cannon';
 import Button from '../components/Button';
 import Score from '../components/Score';
 import { Button as Btn, Alert } from 'react-native';
+import QuitButton from '../components/QuitButton';
 
 const SCORE_GOAL = 5;
 
@@ -208,13 +209,7 @@ RoundScreen.navigationOptions = ({ navigation, screenProps }) => ({
     backgroundColor: screenProps.theme.colors.background,
     borderBottomWidth: 0,
   },
-  headerLeft: (
-    <Btn
-      onPress={() => quitConfirmation(navigation)}
-      title="Quit"
-      color={screenProps.theme.colors.textAlt}
-    />
-  ),
+  headerLeft: <QuitButton onPress={() => quitConfirmation(navigation)} />,
 });
 
 export default RoundScreen;

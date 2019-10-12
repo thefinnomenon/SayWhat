@@ -4,7 +4,8 @@ import styled from 'styled-components/native';
 import { Button } from '../components/Button';
 import { useNavigationParam } from 'react-navigation-hooks';
 import { Player } from '@react-native-community/audio-toolkit';
-import { Button as Btn, Alert } from 'react-native';
+import { Alert } from 'react-native';
+import QuitButton from '../components/QuitButton';
 
 const ROUND_LENGTH_MS = 54000;
 
@@ -122,13 +123,7 @@ GameScreen.navigationOptions = ({ navigation, screenProps }) => ({
     backgroundColor: screenProps.theme.colors.background,
     borderBottomWidth: 0,
   },
-  headerLeft: (
-    <Btn
-      onPress={() => quitConfirmation(navigation)}
-      title="Quit"
-      color={screenProps.theme.colors.textAlt}
-    />
-  ),
+  headerLeft: <QuitButton onPress={() => quitConfirmation(navigation)} />,
 });
 
 export default GameScreen;
