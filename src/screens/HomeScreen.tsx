@@ -30,12 +30,6 @@ const Container = styled.View<Theme>`
   background: ${props => props.theme.colors.background};
 `;
 
-// const LogoContainer = styled.View`
-//   flex: 3;
-//   justify-content: center;
-//   align-content: center;
-// `;
-
 const Logo = styled.Image<Theme>`
   flex: 2;
   margin: auto;

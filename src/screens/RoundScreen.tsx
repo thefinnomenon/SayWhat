@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Theme } from '../../types';
 import styled from 'styled-components/native';
-import { useNavigation } from 'react-navigation-hooks';
+import { useNavigation, useNavigationParam } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import { Player } from '@react-native-community/audio-toolkit';
 import Button from '../components/Button';
@@ -9,7 +9,7 @@ import Score from '../components/Score';
 import { Alert, Modal } from 'react-native';
 import QuitButton from '../components/QuitButton';
 
-const SCORE_GOAL = 5;
+const SCORE_GOAL = 1;
 
 const initialState = Object.freeze({
   words: [],
@@ -23,9 +23,10 @@ const initialState = Object.freeze({
 });
 
 export const RoundScreen = () => {
-  // TODO: get category from navigation params and load that wordlist
-  const category = 'media';
-  const [words, setWords] = useState(initialState.words);
+  const category = useNavigationParam('category');
+  const wordList = useNavigationParam('wordList');
+  const { default: wordlist } = wordList;
+  const [words, setWords] = useState(wordlist);
   const [winner, setWinner] = useState(initialState.winner);
   const [isModalVisable, setIsModalVisable] = useState(
     initialState.isModalVisable,
@@ -36,18 +37,6 @@ export const RoundScreen = () => {
   const [scoreWasUpdated, setScoreWasUpdated] = useState(
     initialState.scoreWasUpdated,
   );
-
-  let win = new Player('win.mp3', { autoDestroy: false });
-
-  useEffect(() => {
-    const { default: wordlist } = require('../../constants/wordlists/media');
-    setWords(wordlist);
-  }, [category]);
-
-  useEffect(() => {
-    const { default: wordlist } = require('../../constants/wordlists/media');
-    setWords(wordlist);
-  }, [category]);
 
   useEffect(() => {
     const winAlertTimeout = setTimeout(() => setIsModalVisable(false), 3000);
@@ -64,6 +53,7 @@ export const RoundScreen = () => {
         if (teamA + 1 === SCORE_GOAL) {
           setWinner('A');
           setIsModalVisable(true);
+          const win = new Player('win.mp3');
           win.play();
         }
         break;
@@ -72,6 +62,7 @@ export const RoundScreen = () => {
         if (teamB + 1 === SCORE_GOAL) {
           setWinner('B');
           setIsModalVisable(true);
+          const win = new Player('win.mp3');
           win.play();
         }
     }
@@ -103,7 +94,7 @@ export const RoundScreen = () => {
       return (
         <BottomButton
           disabled={!scoreWasUpdated}
-          title="START GAME"
+          title={t('START GAME')}
           onPress={() => startRound(round)}
         />
       );
@@ -112,7 +103,7 @@ export const RoundScreen = () => {
       return (
         <BottomButton
           disabled={!scoreWasUpdated}
-          title="START NEW GAME"
+          title={t('START NEW GAME')}
           onPress={() => {
             restartGame();
           }}
@@ -122,7 +113,7 @@ export const RoundScreen = () => {
     return (
       <BottomButton
         disabled={!scoreWasUpdated}
-        title="START ROUND"
+        title={t('START ROUND')}
         onPress={() => startRound(round)}
       />
     );
@@ -139,11 +130,13 @@ export const RoundScreen = () => {
             setIsModalVisable(false);
           }}>
           <WinAlert>
-            <WinAlertText>{`Team ${winner} wins!`}</WinAlertText>
+            <WinAlertText>{`${t('Team')} ${winner} ${t(
+              'wins',
+            )}!`}</WinAlertText>
           </WinAlert>
         </Modal>
         <TitleContainer>
-          <Title>{`Round ${round}`}</Title>
+          <Title>{`${t('Round')} ${round}`}</Title>
         </TitleContainer>
         <ScoreContainer>
           <Score
@@ -247,6 +240,7 @@ const quitConfirmation = navigation =>
 // @ts-ignore: react-navigation has messed up types
 RoundScreen.navigationOptions = ({ navigation, screenProps }) => ({
   title: '',
+  gesturesEnabled: false,
   headerTintColor: screenProps.theme.colors.text,
   headerStyle: {
     backgroundColor: screenProps.theme.colors.background,

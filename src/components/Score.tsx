@@ -26,7 +26,8 @@ export const ScoreDisplay = ({
 const ScoreDisplayContainer = styled.TouchableOpacity<Theme>`
   flex: 4;
   width: 80%;
-  height: 180;
+  height: 100%;
+  height: 180px;
   justify-content: center;
   align-items: center;
   padding: 4px;

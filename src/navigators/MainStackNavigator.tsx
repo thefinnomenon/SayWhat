@@ -24,6 +24,7 @@ export const MainStackNavigator = createStackNavigator(
     }: {
       screenProps: ScreenProps;
     }) => ({
+      headerBackTitle: null,
       headerTintColor: screenProps.theme.nav.tintColor,
       headerStyle: {
         backgroundColor: screenProps.theme.nav.background,

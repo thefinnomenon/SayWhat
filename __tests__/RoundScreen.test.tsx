@@ -17,6 +17,24 @@ jest.mock('@react-native-community/audio-toolkit', () => {
   };
 });
 
+jest.mock('react-navigation-hooks', () => {
+  return {
+    useNavigationParam: jest.fn().mockImplementation(param => {
+      switch (param) {
+        case 'category':
+          return 'category';
+        case 'wordList':
+          return ['Word1', 'Word2', 'Word3'];
+      }
+    }),
+    useNavigation: jest.fn().mockImplementation(() => {
+      return {
+        navigate: jest.fn(),
+      };
+    }),
+  };
+});
+
 const renderComponent = () =>
   renderer
     .create(

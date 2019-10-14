@@ -8,6 +8,12 @@ import i18 from '../i18n';
 
 import GameScreen from '../src/screens/GameScreen';
 
+const useNavigation = () => {
+  return {
+    navigate: jest.fn(),
+  };
+};
+
 jest.mock('react-navigation-hooks', () => {
   return {
     useNavigationParam: jest.fn().mockImplementation(param => {
@@ -15,6 +21,11 @@ jest.mock('react-navigation-hooks', () => {
         case 'words':
           return ['Word1', 'Word2', 'Word3'];
       }
+    }),
+    useNavigation: jest.fn().mockImplementation(() => {
+      return {
+        navigate: jest.fn(),
+      };
     }),
   };
 });

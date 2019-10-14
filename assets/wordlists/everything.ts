@@ -1,4 +1,4 @@
-export const Media = [
+export const Everything = [
   'DVD Player',
   'VCR',
   'Walkman',
@@ -7,4 +7,4 @@ export const Media = [
   'Surround Sound',
 ];
 
-export default Media;
+export default Everything;

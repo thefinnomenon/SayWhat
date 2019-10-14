@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { Button } from '../components/Button';
-import { useNavigationParam } from 'react-navigation-hooks';
+import { useNavigationParam, useNavigation } from 'react-navigation-hooks';
+import { useTranslation } from 'react-i18next';
 import { Player } from '@react-native-community/audio-toolkit';
+import { AndroidBackHandler } from 'react-navigation-backhandler';
 import { Alert } from 'react-native';
 import QuitButton from '../components/QuitButton';
 
@@ -13,6 +15,8 @@ export const GameScreen = () => {
   const words = useNavigationParam('words');
   const round = useNavigationParam('round');
   const onRoundComplete = useNavigationParam('onRoundComplete');
+  const { t } = useTranslation();
+  const { navigate } = useNavigation();
 
   const getRandomWord = () => {
     return words[Math.round(Math.round(Math.random() * (words.length - 1)))];
@@ -46,6 +50,12 @@ export const GameScreen = () => {
 
   return (
     <>
+      <AndroidBackHandler
+        onBackPress={() => {
+          quitConfirmation(navigate, t);
+          return false;
+        }}
+      />
       <Container>
         <WordContainer>
           <Word>{word}</Word>
@@ -54,7 +64,7 @@ export const GameScreen = () => {
       </Container>
       <BottomButton
         disabled={!isPlayable}
-        title="NEXT"
+        title={t('NEXT')}
         onPress={() => setWord(getRandomWord())}
       />
     </>
@@ -62,18 +72,18 @@ export const GameScreen = () => {
 };
 
 // @ts-ignore: react-navigation has messed up types
-const quitConfirmation = navigation =>
+const quitConfirmation = (navigate, t) =>
   Alert.alert(
-    'Quit Confirmation',
-    'Are you sure you want to quit the current game?',
+    t('Quit Confirmation'),
+    t('Are you sure you want to quit the current game?'),
     [
       {
-        text: 'Cancel',
+        text: t('Cancel'),
         style: 'cancel',
       },
       {
-        text: 'Yes',
-        onPress: () => navigation.navigate('Home'),
+        text: t('Yes'),
+        onPress: () => navigate('Home'),
       },
     ],
     { cancelable: true },
@@ -118,13 +128,18 @@ const Spacer = styled.View<SpacerProps>`
 
 // @ts-ignore: react-navigation has messed up types
 GameScreen.navigationOptions = ({ navigation, screenProps }) => ({
-  title: `Round ${navigation.getParam('round', '')}`,
+  title: `${screenProps.t('Round')} ${navigation.getParam('round', '')}`,
+  gesturesEnabled: false,
   headerTintColor: screenProps.theme.colors.text,
   headerStyle: {
     backgroundColor: screenProps.theme.colors.background,
     borderBottomWidth: 0,
   },
-  headerLeft: <QuitButton onPress={() => quitConfirmation(navigation)} />,
+  headerLeft: (
+    <QuitButton
+      onPress={() => quitConfirmation(navigation.navigate, screenProps.t)}
+    />
+  ),
 });
 
 export default GameScreen;
