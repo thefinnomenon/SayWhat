@@ -74,7 +74,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --fix",
       "stylelint",
       "cross-env NODE_ENV=test jest --bail --findRelatedTests",
       "git add"

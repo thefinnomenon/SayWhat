@@ -17,29 +17,45 @@ exports[`renders correctly 1`] = `
     style={
       Array [
         Object {
-          "alignContent": "center",
           "flexBasis": 0,
-          "flexGrow": 3,
+          "flexGrow": 1,
           "flexShrink": 1,
-          "justifyContent": "center",
         },
       ]
     }
-  >
-    <Text
-      style={
-        Array [
-          Object {
-            "color": "#5c8bad",
-            "fontSize": 36,
-            "textAlign": "center",
-          },
-        ]
+  />
+  <Image
+    source={
+      Object {
+        "testUri": "../../../assets/images/logo.png",
       }
-    >
-      Say What?!
-    </Text>
-  </View>
+    }
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 2,
+          "flexShrink": 1,
+          "marginBottom": "auto",
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "marginTop": "auto",
+          "resizeMode": "contain",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  />
   <View
     style={
       Array [
