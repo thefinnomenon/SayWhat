@@ -11,6 +11,7 @@ const ROUND_LENGTH_MS = 54000;
 
 export const GameScreen = () => {
   const words = useNavigationParam('words');
+  const round = useNavigationParam('round');
   const onRoundComplete = useNavigationParam('onRoundComplete');
 
   const getRandomWord = () => {
@@ -21,9 +22,9 @@ export const GameScreen = () => {
   const [isPlayable, setIsPlayable] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => onRoundComplete(), ROUND_LENGTH_MS);
+    const timer = setTimeout(() => onRoundComplete(round), ROUND_LENGTH_MS);
     return () => clearTimeout(timer);
-  }, [onRoundComplete]);
+  }, [onRoundComplete, round]);
 
   useEffect(() => {
     const playableTimer = setTimeout(
@@ -117,7 +118,7 @@ const Spacer = styled.View<SpacerProps>`
 
 // @ts-ignore: react-navigation has messed up types
 GameScreen.navigationOptions = ({ navigation, screenProps }) => ({
-  title: navigation.getParam('title', ''),
+  title: `Round ${navigation.getParam('round', '')}`,
   headerTintColor: screenProps.theme.colors.text,
   headerStyle: {
     backgroundColor: screenProps.theme.colors.background,

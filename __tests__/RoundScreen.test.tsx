@@ -7,6 +7,16 @@ import { I18nextProvider } from 'react-i18next';
 import i18 from '../i18n';
 import RoundScreen from '../src/screens/RoundScreen';
 
+jest.mock('@react-native-community/audio-toolkit', () => {
+  return {
+    Player: () => ({
+      play: jest.fn(),
+      stop: jest.fn(),
+      destory: jest.fn(),
+    }),
+  };
+});
+
 const renderComponent = () =>
   renderer
     .create(

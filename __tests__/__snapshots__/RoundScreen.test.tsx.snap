@@ -16,6 +16,44 @@ Array [
       ]
     }
   >
+    <Modal
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#e8e8e8",
+              "borderRadius": 10,
+              "height": "25%",
+              "justifyContent": "center",
+              "marginBottom": "auto",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": "auto",
+              "width": "80%",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontSize": 40,
+              },
+            ]
+          }
+        >
+          Team  wins!
+        </Text>
+      </View>
+    </Modal>
     <View
       style={
         Array [

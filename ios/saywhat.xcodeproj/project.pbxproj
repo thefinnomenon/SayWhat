@@ -20,6 +20,7 @@
 		9A8CDC92212C92BF0E5F309B /* libPods-saywhatTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A884C76DA9A6118FA941D29A /* libPods-saywhatTests.a */; };
 		9F4FE92ABA8C6A19F6F259A8 /* libPods-saywhat-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A70B27AE486DC894D364993 /* libPods-saywhat-tvOS.a */; };
 		B10BB0E6F0A65F52824F7382 /* libPods-saywhat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 006E936DCC3EBB9497BD74F6 /* libPods-saywhat.a */; };
+		B65DF444235264BE002A7989 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B65DF443235264BE002A7989 /* win.mp3 */; };
 		B67C2171235242A4007C62AF /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B67C2170235242A4007C62AF /* beep.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		A884C76DA9A6118FA941D29A /* libPods-saywhatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saywhatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6980FBCB1B4CDFC98DA24D /* Pods-saywhat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat.release.xcconfig"; path = "Target Support Files/Pods-saywhat/Pods-saywhat.release.xcconfig"; sourceTree = "<group>"; };
 		AE4CC1349B910A36790EA47A /* Pods-saywhat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat.debug.xcconfig"; path = "Target Support Files/Pods-saywhat/Pods-saywhat.debug.xcconfig"; sourceTree = "<group>"; };
+		B65DF443235264BE002A7989 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 		B67C2170235242A4007C62AF /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		CA5FF1AE7A24CEB7AA2CD311 /* Pods-saywhatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhatTests.debug.xcconfig"; path = "Target Support Files/Pods-saywhatTests/Pods-saywhatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -127,6 +129,7 @@
 		13B07FAE1A68108700A75B9A /* saywhat */ = {
 			isa = PBXGroup;
 			children = (
+				B65DF443235264BE002A7989 /* win.mp3 */,
 				B67C2170235242A4007C62AF /* beep.mp3 */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -343,6 +346,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				B67C2171235242A4007C62AF /* beep.mp3 in Resources */,
+				B65DF444235264BE002A7989 /* win.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

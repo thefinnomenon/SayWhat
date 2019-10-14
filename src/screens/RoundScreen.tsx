@@ -3,11 +3,10 @@ import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
-//@ts-ignore
-import ConfettiCannon from 'react-native-confetti-cannon';
+import { Player } from '@react-native-community/audio-toolkit';
 import Button from '../components/Button';
 import Score from '../components/Score';
-import { Button as Btn, Alert } from 'react-native';
+import { Alert, Modal } from 'react-native';
 import QuitButton from '../components/QuitButton';
 
 const SCORE_GOAL = 5;
@@ -15,6 +14,8 @@ const SCORE_GOAL = 5;
 const initialState = Object.freeze({
   words: [],
   winner: '',
+  winSound: null,
+  isModalVisable: false,
   round: 1,
   teamA: 0,
   teamB: 0,
@@ -26,6 +27,9 @@ export const RoundScreen = () => {
   const category = 'media';
   const [words, setWords] = useState(initialState.words);
   const [winner, setWinner] = useState(initialState.winner);
+  const [isModalVisable, setIsModalVisable] = useState(
+    initialState.isModalVisable,
+  );
   const [round, setRound] = useState(initialState.round);
   const [teamA, setTeamA] = useState(initialState.teamA);
   const [teamB, setTeamB] = useState(initialState.teamB);
@@ -33,10 +37,22 @@ export const RoundScreen = () => {
     initialState.scoreWasUpdated,
   );
 
+  let win = new Player('win.mp3', { autoDestroy: false });
+
   useEffect(() => {
     const { default: wordlist } = require('../../constants/wordlists/media');
     setWords(wordlist);
   }, [category]);
+
+  useEffect(() => {
+    const { default: wordlist } = require('../../constants/wordlists/media');
+    setWords(wordlist);
+  }, [category]);
+
+  useEffect(() => {
+    const winAlertTimeout = setTimeout(() => setIsModalVisable(false), 3000);
+    return () => clearTimeout(winAlertTimeout);
+  }, [isModalVisable]);
 
   const { navigate } = useNavigation();
   const { t } = useTranslation();
@@ -47,26 +63,30 @@ export const RoundScreen = () => {
         setTeamA(teamA + 1);
         if (teamA + 1 === SCORE_GOAL) {
           setWinner('A');
+          setIsModalVisable(true);
+          win.play();
         }
         break;
       case 'B':
         setTeamB(teamB + 1);
         if (teamB + 1 === SCORE_GOAL) {
           setWinner('B');
+          setIsModalVisable(true);
+          win.play();
         }
     }
 
     setScoreWasUpdated(true);
   };
 
-  const onRoundComplete = () => {
-    setRound(round + 1);
+  const onRoundComplete = (currRound: number) => {
+    setRound(currRound + 1);
     setScoreWasUpdated(false);
     navigate('Round');
   };
 
-  const startRound = () => {
-    navigate('Game', { title: `Round ${round}`, words, onRoundComplete });
+  const startRound = (currRound: number) => {
+    navigate('Game', { words, round: currRound, onRoundComplete });
   };
 
   const restartGame = () => {
@@ -75,8 +95,7 @@ export const RoundScreen = () => {
     setTeamA(initialState.teamA);
     setTeamB(initialState.teamB);
     setScoreWasUpdated(initialState.scoreWasUpdated);
-    // TODO: On restart, when coming back from first round, it increments the old round count
-    navigate('Game', { title: `Round ${1}`, words, onRoundComplete });
+    startRound(initialState.round);
   };
 
   const startButton = () => {
@@ -85,7 +104,7 @@ export const RoundScreen = () => {
         <BottomButton
           disabled={!scoreWasUpdated}
           title="START GAME"
-          onPress={() => startRound()}
+          onPress={() => startRound(round)}
         />
       );
     }
@@ -94,7 +113,9 @@ export const RoundScreen = () => {
         <BottomButton
           disabled={!scoreWasUpdated}
           title="START NEW GAME"
-          onPress={() => restartGame()}
+          onPress={() => {
+            restartGame();
+          }}
         />
       );
     }
@@ -102,7 +123,7 @@ export const RoundScreen = () => {
       <BottomButton
         disabled={!scoreWasUpdated}
         title="START ROUND"
-        onPress={() => startRound()}
+        onPress={() => startRound(round)}
       />
     );
   };
@@ -110,9 +131,17 @@ export const RoundScreen = () => {
   return (
     <>
       <Container>
-        {winner !== '' && (
-          <ConfettiCannon count={200} origin={{ x: 0, y: 0 }} />
-        )}
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={isModalVisable}
+          onRequestClose={() => {
+            setIsModalVisable(false);
+          }}>
+          <WinAlert>
+            <WinAlertText>{`Team ${winner} wins!`}</WinAlertText>
+          </WinAlert>
+        </Modal>
         <TitleContainer>
           <Title>{`Round ${round}`}</Title>
         </TitleContainer>
@@ -143,6 +172,20 @@ const Container = styled.View<Theme>`
   justify-content: space-between;
   align-items: center;
   background: ${props => props.theme.colors.background};
+`;
+
+const WinAlert = styled.View<Theme>`
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 25%;
+  margin: auto;
+  background: ${props => props.theme.colors.border};
+  border-radius: 10;
+`;
+
+const WinAlertText = styled.Text<Theme>`
+  font-size: 40;
 `;
 
 const TitleContainer = styled.View`
