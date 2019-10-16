@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+>
+  <RCTScrollView>
+    <View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        Sit in a circle with every other person being on the same team.
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        Decide which team is Team A and which is Team B.
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        Choose the word deck you want to play with.
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        A member of Team A should start the game
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        The goal is to get your team members to guess the word or phrase that you see on the screen without using any of the words on the screen, using rhyming words, or spelling the words out.
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        When one of your team members shouts the answer, hit the NEXT button and pass it to the player to your right.
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        The team who is holding the device when the buzzer goes off, loses the round.
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        Add a point to the winning team.
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#202020",
+              "fontSize": 20,
+              "marginBottom": 10,
+              "marginLeft": 10,
+              "marginRight": 10,
+              "marginTop": 10,
+            },
+          ]
+        }
+      >
+        First to 5 wins!
+      </Text>
+    </View>
+  </RCTScrollView>
+</View>
+`;

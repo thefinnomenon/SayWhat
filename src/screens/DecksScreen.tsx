@@ -6,7 +6,7 @@ import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import Deck from '../components/Deck';
 
-const decks = [
+export const decks = [
   {
     category: 'Everything',
     imageSrc: require('../../assets/images/everything.jpeg'),

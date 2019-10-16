@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import * as RNLocalize from 'react-native-localize';
 
-const fallbackLanguage = { languageTag: 'en', isRTL: false };
+const fallbackLanguage = { languageTag: 'sp', isRTL: false };
 const defaultLanguage =
   RNLocalize.findBestAvailableLanguage(['en', 'pt']) || fallbackLanguage;
 
@@ -18,7 +18,7 @@ i18n.use(initReactI18next).init({
   nsSeparator: false,
   keySeparator: false,
   fallbackLng: false,
-  debug: true,
+  debug: false,
   interpolation: {
     escapeValue: false,
     formatSeparator: ',',

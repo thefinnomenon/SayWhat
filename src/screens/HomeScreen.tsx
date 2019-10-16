@@ -4,7 +4,6 @@ import styled from 'styled-components/native';
 import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import Button from '../components/Button';
-import { Image } from 'react-native';
 
 export const HomeScreen = () => {
   const { navigate } = useNavigation();

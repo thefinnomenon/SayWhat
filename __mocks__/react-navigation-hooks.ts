@@ -1,6 +1,8 @@
+const navigate = jest.fn();
+
 const useNavigation = () => {
   return {
-    navigate: jest.fn(),
+    navigate,
   };
 };
 
@@ -13,4 +15,4 @@ const useNavigationParam = (props: useNavigationParamProps) => {
   return props.value;
 };
 
-export { useNavigation, useNavigationParam };
+export { useNavigation, useNavigationParam, navigate };
