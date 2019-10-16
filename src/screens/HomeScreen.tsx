@@ -18,6 +18,8 @@ export const HomeScreen = () => {
       <ButtonsContainer>
         <Button onPress={() => navigate('Decks')} title={t('PLAY')} />
         <Spacer />
+        <Button onPress={() => navigate('Rules')} title={t('RULES')} />
+        <Spacer />
         <Button onPress={() => navigate('Settings')} title={t('SETTINGS')} />
       </ButtonsContainer>
       <Spacer />
@@ -37,7 +39,7 @@ const Logo = styled.Image<Theme>`
 `;
 
 const ButtonsContainer = styled.View`
-  flex: 1;
+  flex: 2;
   width: 80%;
   justify-content: space-around;
   align-content: center;

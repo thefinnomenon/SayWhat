@@ -6,6 +6,7 @@ import SettingListScreen from '../screens/SettingListScreen';
 import GameScreen from '../screens/GameScreen';
 import DecksScreen from '../screens/DecksScreen';
 import RoundScreen from '../screens/RoundScreen';
+import RulesScreen from '../screens/RulesScreen';
 
 export const MainStackNavigator = createStackNavigator(
   {
@@ -14,6 +15,9 @@ export const MainStackNavigator = createStackNavigator(
     Settings: SettingsScreen,
     // @ts-ignore: react-navigation has messed up types
     SettingList: SettingListScreen,
+    // @ts-ignore: react-navigation has messed up types
+    Rules: RulesScreen,
+    // @ts-ignore: react-navigation has messed up types
     Decks: DecksScreen,
     Game: GameScreen,
     Round: RoundScreen,

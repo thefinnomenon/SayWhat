@@ -1,5 +1,5 @@
 import React from 'react';
-import { Theme } from '../../types';
+import { Theme, ScreenProps } from '../../types';
 import styled from 'styled-components/native';
 import { ScrollView } from 'react-native';
 import { useNavigation } from 'react-navigation-hooks';
@@ -84,8 +84,12 @@ const ContentContainer = styled.View`
   margin: 4px;
 `;
 
-DecksScreen.navigationOptions = {
-  title: 'Decks',
-};
+DecksScreen.navigationOptions = ({
+  screenProps,
+}: {
+  screenProps: ScreenProps;
+}) => ({
+  title: screenProps.t('Decks'),
+});
 
 export default DecksScreen;
