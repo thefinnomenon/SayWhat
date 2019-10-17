@@ -3,6 +3,7 @@ import { ScrollView } from 'react-native';
 import { Theme, ScreenProps } from '../../types';
 import styled from 'styled-components/native';
 import { useTranslation } from 'react-i18next';
+import normalize from '../../responsive';
 
 export const RulesScreen = () => {
   const { t } = useTranslation();
@@ -51,8 +52,8 @@ const Container = styled.View<Theme>`
 
 const Line = styled.Text<Theme>`
   color: ${props => props.theme.colors.text};
-  font-size: 20;
-  margin: 10px;
+  font-size: ${normalize(20)};
+  margin: ${normalize(10)}px;
 `;
 
 export default RulesScreen;

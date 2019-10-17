@@ -3,6 +3,7 @@ import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { ImageSourcePropType, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import normalize from '../../responsive';
 
 type DeckProps = {
   category: string;
@@ -29,15 +30,15 @@ export const Deck = ({ category, imageSrc, onPress }: DeckProps) => (
 
 const styles = StyleSheet.create({
   image: {
-    borderRadius: 10,
+    borderRadius: normalize(10),
   },
 });
 
 const Card = styled.TouchableOpacity<Theme>`
-  height: 250px;
+  height: ${normalize(250)};
   width: 45%;
-  margin: 8px;
-  border-radius: 10px;
+  margin: ${normalize(8)}px;
+  border-radius: ${normalize(10)};
 `;
 
 const ImageBackground = styled.ImageBackground<Theme>`
@@ -52,15 +53,15 @@ const Scrim = styled(LinearGradient)`
   right: 0;
   bottom: 0;
   height: 100%;
-  border-radius: 10;
+  border-radius: ${normalize(10)};
 `;
 
 const Title = styled.Text<Theme>`
   color: white;
-  font-size: 28;
+  font-size: ${normalize(28)};
   font-weight: bold;
-  padding: 8px;
-  margin-bottom: 4px;
+  padding: ${normalize(8)}px;
+  margin-bottom: ${normalize(4)}px;
 `;
 
 export default Deck;

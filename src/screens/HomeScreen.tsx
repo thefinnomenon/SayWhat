@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import Button from '../components/Button';
+import normalize from '../../responsive';
 
 export const HomeScreen = () => {
   const { navigate } = useNavigation();
@@ -15,11 +16,12 @@ export const HomeScreen = () => {
       <Logo source={require('../../assets/images/logo.png')} />
       <Spacer />
       <ButtonsContainer>
-        <Button onPress={() => navigate('Decks')} title={t('PLAY')} />
-        <Spacer />
-        <Button onPress={() => navigate('Rules')} title={t('RULES')} />
-        <Spacer />
-        <Button onPress={() => navigate('Settings')} title={t('SETTINGS')} />
+        <StyledButton onPress={() => navigate('Decks')} title={t('PLAY')} />
+        <StyledButton onPress={() => navigate('Rules')} title={t('RULES')} />
+        <StyledButton
+          onPress={() => navigate('Settings')}
+          title={t('SETTINGS')}
+        />
       </ButtonsContainer>
       <Spacer />
     </Container>
@@ -32,17 +34,22 @@ const Container = styled.View<Theme>`
 `;
 
 const Logo = styled.Image<Theme>`
-  flex: 2;
+  height: ${normalize(250)};
+  width: ${normalize(250)};
   margin: auto;
   resize-mode: contain;
 `;
 
 const ButtonsContainer = styled.View`
-  flex: 2;
-  width: 80%;
-  justify-content: space-around;
+  height: ${normalize(200)};
+  width: ${normalize(300)};
+  justify-content: space-between;
   align-content: center;
   margin: auto;
+`;
+
+const StyledButton = styled(Button)<Theme>`
+  margin: ${normalize(6)}px;
 `;
 
 const Spacer = styled.View`

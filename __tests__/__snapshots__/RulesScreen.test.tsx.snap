@@ -20,11 +20,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -36,11 +36,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -52,11 +52,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -68,11 +68,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -84,11 +84,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -100,11 +100,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -116,11 +116,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -132,11 +132,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }
@@ -148,11 +148,11 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 20,
-              "marginBottom": 10,
-              "marginLeft": 10,
-              "marginRight": 10,
-              "marginTop": 10,
+              "fontSize": 40,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 20,
             },
           ]
         }

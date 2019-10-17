@@ -1,6 +1,7 @@
 import React from 'react';
 import { Theme } from '../../types';
 import styled from 'styled-components/native';
+import normalize from '../../responsive';
 
 type Props = {
   title: string;
@@ -20,12 +21,12 @@ const Container = styled.TouchableOpacity<Theme>`
   justify-content: center;
   align-content: center;
   background: ${props => props.theme.colors.primary};
-  border-radius: 10px;
+  border-radius: ${normalize(10)};
 `;
 
 const Title = styled.Text<Theme>`
   color: ${props => props.theme.colors.background};
-  font-size: 18;
+  font-size: ${normalize(20)};
   font-weight: bold;
   text-align: center;
 `;

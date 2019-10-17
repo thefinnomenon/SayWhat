@@ -8,6 +8,7 @@ import { useTheme } from '../../contexts/ManageThemeContext';
 import i18n from 'i18next';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Row from '../components/Row';
+import normalize from '../../responsive';
 
 const languages = [
   { key: 'en', value: 'English' },
@@ -90,12 +91,12 @@ type ValueProps = {
 const Value = styled.Text<ValueProps>`
   color: ${props => props.theme.colors.textAlt};
   text-transform: ${props => props.transform || 'none'};
-  font-size: 18;
+  font-size: ${normalize(18)};
 `;
 
 const StyledIcon = styled(Icon)<Theme>`
-  font-size: 20;
-  margin-right: 12px;
+  font-size: ${normalize(20)};
+  margin-right: ${normalize(12)};
   color: ${props => props.theme.colors.text};
 `;
 

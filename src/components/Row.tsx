@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import normalize from '../../responsive';
 
 export interface Props {
   icon?: Element;
@@ -35,13 +36,13 @@ export const Row = ({
 const ContentContainer = styled.TouchableOpacity`
   flex: 1;
   flex-direction: row;
-  padding-left: 15;
+  padding-left: ${normalize(15)};
   align-items: center;
 `;
 
 const Container = styled.View`
   background-color: transparent;
-  height: 46px;
+  height: ${normalize(46)};
   align-items: stretch;
 `;
 
@@ -54,17 +55,17 @@ const TitlesContainer = styled.View`
 
 const Title = styled.Text<Theme>`
   color: ${props => props.theme.colors.text};
-  font-size: 18;
-  margin-right: 15;
+  font-size: ${normalize(18)};
+  margin-right: ${normalize(15)};
 `;
 
 const AccessoryContainer = styled.View`
-  margin-right: 12px;
+  margin-right: ${normalize(12)};
 `;
 
 const StyledIcon = styled(Icon)<Theme>`
-  font-size: 18;
-  margin-right: 12px;
+  font-size: ${normalize(18)};
+  margin-right: ${normalize(12)};
   color: ${props => props.theme.colors.text};
 `;
 

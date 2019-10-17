@@ -33,14 +33,13 @@ exports[`renders correctly 1`] = `
     style={
       Array [
         Object {
-          "flexBasis": 0,
-          "flexGrow": 2,
-          "flexShrink": 1,
+          "height": 500,
           "marginBottom": "auto",
           "marginLeft": "auto",
           "marginRight": "auto",
           "marginTop": "auto",
           "resizeMode": "contain",
+          "width": 500,
         },
       ]
     }
@@ -61,15 +60,13 @@ exports[`renders correctly 1`] = `
       Array [
         Object {
           "alignContent": "center",
-          "flexBasis": 0,
-          "flexGrow": 2,
-          "flexShrink": 1,
-          "justifyContent": "space-around",
+          "height": 400,
+          "justifyContent": "space-between",
           "marginBottom": "auto",
           "marginLeft": "auto",
           "marginRight": "auto",
           "marginTop": "auto",
-          "width": "80%",
+          "width": 600,
         },
       ]
     }
@@ -89,11 +86,15 @@ exports[`renders correctly 1`] = `
         Object {
           "alignContent": "center",
           "backgroundColor": "#50b7ff",
-          "borderRadius": 10,
+          "borderRadius": 20,
           "flexBasis": 0,
           "flexGrow": 1,
           "flexShrink": 1,
           "justifyContent": "center",
+          "marginBottom": 12,
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 12,
           "opacity": 1,
         }
       }
@@ -103,7 +104,7 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#fff",
-              "fontSize": 18,
+              "fontSize": 40,
               "fontWeight": "bold",
               "textAlign": "center",
             },
@@ -114,17 +115,6 @@ exports[`renders correctly 1`] = `
       </Text>
     </View>
     <View
-      style={
-        Array [
-          Object {
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
-          },
-        ]
-      }
-    />
-    <View
       accessible={true}
       focusable={true}
       isTVSelectable={true}
@@ -139,11 +129,15 @@ exports[`renders correctly 1`] = `
         Object {
           "alignContent": "center",
           "backgroundColor": "#50b7ff",
-          "borderRadius": 10,
+          "borderRadius": 20,
           "flexBasis": 0,
           "flexGrow": 1,
           "flexShrink": 1,
           "justifyContent": "center",
+          "marginBottom": 12,
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 12,
           "opacity": 1,
         }
       }
@@ -153,7 +147,7 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#fff",
-              "fontSize": 18,
+              "fontSize": 40,
               "fontWeight": "bold",
               "textAlign": "center",
             },
@@ -164,17 +158,6 @@ exports[`renders correctly 1`] = `
       </Text>
     </View>
     <View
-      style={
-        Array [
-          Object {
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
-          },
-        ]
-      }
-    />
-    <View
       accessible={true}
       focusable={true}
       isTVSelectable={true}
@@ -189,11 +172,15 @@ exports[`renders correctly 1`] = `
         Object {
           "alignContent": "center",
           "backgroundColor": "#50b7ff",
-          "borderRadius": 10,
+          "borderRadius": 20,
           "flexBasis": 0,
           "flexGrow": 1,
           "flexShrink": 1,
           "justifyContent": "center",
+          "marginBottom": 12,
+          "marginLeft": 12,
+          "marginRight": 12,
+          "marginTop": 12,
           "opacity": 1,
         }
       }
@@ -203,7 +190,7 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "color": "#fff",
-              "fontSize": 18,
+              "fontSize": 40,
               "fontWeight": "bold",
               "textAlign": "center",
             },

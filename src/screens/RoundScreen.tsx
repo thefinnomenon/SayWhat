@@ -4,12 +4,13 @@ import styled from 'styled-components/native';
 import { useNavigation, useNavigationParam } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import { Player } from '@react-native-community/audio-toolkit';
+import normalize from '../../responsive';
 import Button from '../components/Button';
 import Score from '../components/Score';
 import { Alert, Modal } from 'react-native';
 import QuitButton from '../components/QuitButton';
 
-const SCORE_GOAL = 1;
+const SCORE_GOAL = 5;
 
 const initialState = Object.freeze({
   words: [],
@@ -23,7 +24,6 @@ const initialState = Object.freeze({
 });
 
 export const RoundScreen = () => {
-  const category = useNavigationParam('category');
   const wordList = useNavigationParam('wordList');
   const { default: wordlist } = wordList;
   const [words, setWords] = useState(wordlist);
@@ -138,6 +138,7 @@ export const RoundScreen = () => {
         <TitleContainer>
           <Title>{`${t('Round')} ${round}`}</Title>
         </TitleContainer>
+        <Spacer flex={1} />
         <ScoreContainer>
           <Score
             teamName="A"
@@ -153,7 +154,7 @@ export const RoundScreen = () => {
             onPress={() => updateScore('B')}
           />
         </ScoreContainer>
-        <Spacer flex={2} />
+        <Spacer flex={3} />
       </Container>
       {startButton()}
     </>
@@ -173,12 +174,13 @@ const WinAlert = styled.View<Theme>`
   width: 80%;
   height: 25%;
   margin: auto;
+  padding: ${normalize(4)}px;
   background: ${props => props.theme.colors.border};
-  border-radius: 10;
+  border-radius: ${normalize(10)};
 `;
 
 const WinAlertText = styled.Text<Theme>`
-  font-size: 40;
+  font-size: ${normalize(40)};
 `;
 
 const TitleContainer = styled.View`
@@ -197,9 +199,9 @@ const ScoreContainer = styled.View<Theme>`
 
 const Title = styled.Text<Theme>`
   color: ${props => props.theme.colors.text};
-  font-size: 48;
+  font-size: ${normalize(48)};
   font-weight: bold;
-  margin: 8px;
+  margin: ${normalize(8)}px;
 `;
 
 const BottomButton = styled(Button)<Theme>`
@@ -207,7 +209,7 @@ const BottomButton = styled(Button)<Theme>`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: ${normalize(75)}px;
   border-radius: 0;
   background: ${props => props.theme.colors.primary};
 `;

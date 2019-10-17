@@ -30,7 +30,7 @@ exports[`renders correctly 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "height": 46,
+            "height": 92,
             "justifyContent": "space-between",
             "opacity": 1,
           }
@@ -42,9 +42,9 @@ exports[`renders correctly 1`] = `
             Array [
               Object {
                 "color": "#202020",
-                "fontSize": 18,
+                "fontSize": 36,
                 "fontWeight": "normal",
-                "marginLeft": 8,
+                "marginLeft": 16,
               },
             ]
           }
@@ -57,7 +57,7 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "backgroundColor": "#bdbdbd",
-              "height": 1,
+              "height": 2,
               "marginBottom": "auto",
               "marginLeft": "auto",
               "marginRight": "auto",
@@ -82,7 +82,7 @@ exports[`renders correctly 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "height": 46,
+            "height": 92,
             "justifyContent": "space-between",
             "opacity": 1,
           }
@@ -94,9 +94,9 @@ exports[`renders correctly 1`] = `
             Array [
               Object {
                 "color": "#202020",
-                "fontSize": 18,
+                "fontSize": 36,
                 "fontWeight": "bold",
-                "marginLeft": 8,
+                "marginLeft": 16,
               },
             ]
           }
@@ -114,8 +114,8 @@ exports[`renders correctly 1`] = `
               Array [
                 Object {
                   "color": "#202020",
-                  "fontSize": 20,
-                  "marginRight": 12,
+                  "fontSize": 40,
+                  "marginRight": 24,
                 },
               ],
               Object {
@@ -137,7 +137,7 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "backgroundColor": "#bdbdbd",
-              "height": 1,
+              "height": 2,
               "marginBottom": "auto",
               "marginLeft": "auto",
               "marginRight": "auto",
@@ -162,7 +162,7 @@ exports[`renders correctly 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
-            "height": 46,
+            "height": 92,
             "justifyContent": "space-between",
             "opacity": 1,
           }
@@ -174,9 +174,9 @@ exports[`renders correctly 1`] = `
             Array [
               Object {
                 "color": "#202020",
-                "fontSize": 18,
+                "fontSize": 36,
                 "fontWeight": "normal",
-                "marginLeft": 8,
+                "marginLeft": 16,
               },
             ]
           }
@@ -189,7 +189,7 @@ exports[`renders correctly 1`] = `
           Array [
             Object {
               "backgroundColor": "#bdbdbd",
-              "height": 1,
+              "height": 2,
               "marginBottom": "auto",
               "marginLeft": "auto",
               "marginRight": "auto",

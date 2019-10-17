@@ -3,6 +3,7 @@ import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import normalize from '../../responsive';
 
 type Props = {
   id: string;
@@ -26,7 +27,7 @@ const ListRow = ({ id, value, isSelected, onSelect }: Props) => {
 };
 
 const RowContainer = styled.TouchableOpacity<Theme>`
-  height: 46px;
+  height: ${normalize(46)};
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -37,22 +38,22 @@ type TitleProps = {
 } & Theme;
 
 const Title = styled.Text<TitleProps>`
-  margin-left: 8px;
+  margin-left: ${normalize(8)}px;
   color: ${props => props.theme.colors.text};
   font-weight: ${props => (props.isSelected ? 'bold' : 'normal')};
-  font-size: 18;
+  font-size: ${normalize(18)};
 `;
 
 const RowDivider = styled.View<Theme>`
-  height: 1px;
+  height: ${normalize(1)};
   width: 95%;
   margin: auto;
   background: ${props => props.theme.colors.borderAlt};
 `;
 
 const StyledIcon = styled(Icon)`
-  font-size: 20;
-  margin-right: 12px;
+  font-size: ${normalize(20)};
+  margin-right: ${normalize(12)}px;
   color: ${props => props.theme.colors.text};
 `;
 

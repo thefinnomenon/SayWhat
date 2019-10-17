@@ -3,6 +3,7 @@ import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import normalize from '../../responsive';
 
 type Props = {
   onPress(): void;
@@ -17,8 +18,8 @@ export const QuitButton = ({ onPress }: Props) => (
 );
 
 const StyledIcon = styled(Icon)<Theme>`
-  font-size: 30;
-  margin-left: 20px;
+  font-size: ${normalize(20)};
+  margin-left: ${normalize(20)}px;
   color: ${props => props.theme.colors.textAlt};
 `;
 

@@ -5,6 +5,7 @@ import { ScrollView } from 'react-native';
 import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import Deck from '../components/Deck';
+import normalize from '../../responsive';
 
 export const decks = [
   {
@@ -81,7 +82,7 @@ const ContentContainer = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 4px;
+  margin: ${normalize(4)}px;
 `;
 
 DecksScreen.navigationOptions = ({

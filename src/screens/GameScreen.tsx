@@ -8,6 +8,7 @@ import { Player } from '@react-native-community/audio-toolkit';
 import { AndroidBackHandler } from 'react-navigation-backhandler';
 import { Alert } from 'react-native';
 import QuitButton from '../components/QuitButton';
+import normalize from '../../responsive';
 
 const ROUND_LENGTH_MS = 54000;
 
@@ -104,9 +105,9 @@ const WordContainer = styled.View`
 
 const Word = styled.Text<Theme>`
   color: ${props => props.theme.colors.text};
-  font-size: 48;
+  font-size: ${normalize(48)};
   font-weight: bold;
-  margin: 8px;
+  margin: ${normalize(8)}px;
 `;
 
 const BottomButton = styled(Button)<Theme>`
@@ -114,7 +115,7 @@ const BottomButton = styled(Button)<Theme>`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: ${normalize(80)}px;
   border-radius: 0;
   background: ${props => props.theme.colors.primary};
 `;

@@ -34,12 +34,12 @@ Array [
           Array [
             Object {
               "color": "#202020",
-              "fontSize": 48,
+              "fontSize": 96,
               "fontWeight": "bold",
-              "marginBottom": 8,
-              "marginLeft": 8,
-              "marginRight": 8,
-              "marginTop": 8,
+              "marginBottom": 16,
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 16,
             },
           ]
         }
@@ -80,7 +80,7 @@ Array [
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
-        "height": 80,
+        "height": 160,
         "justifyContent": "center",
         "left": 0,
         "opacity": 1,
@@ -94,7 +94,7 @@ Array [
         Array [
           Object {
             "color": "#fff",
-            "fontSize": 18,
+            "fontSize": 40,
             "fontWeight": "bold",
             "textAlign": "center",
           },
