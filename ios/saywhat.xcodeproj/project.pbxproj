@@ -54,15 +54,18 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = saywhat/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = saywhat/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = saywhat/main.m; sourceTree = "<group>"; };
+		1A014C503611DF393D562782 /* Pods-saywhatTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhatTests.staging.xcconfig"; path = "Target Support Files/Pods-saywhatTests/Pods-saywhatTests.staging.xcconfig"; sourceTree = "<group>"; };
 		1D60A5736B3310E298131D47 /* Pods-saywhatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhatTests.release.xcconfig"; path = "Target Support Files/Pods-saywhatTests/Pods-saywhatTests.release.xcconfig"; sourceTree = "<group>"; };
 		28DEE454C09F79C7FB8B932F /* Pods-saywhat-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-saywhat-tvOS/Pods-saywhat-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* saywhat-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "saywhat-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* saywhat-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "saywhat-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		344148773F59F01E20FE4954 /* Pods-saywhat-tvOS.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat-tvOS.staging.xcconfig"; path = "Target Support Files/Pods-saywhat-tvOS/Pods-saywhat-tvOS.staging.xcconfig"; sourceTree = "<group>"; };
 		5A70B27AE486DC894D364993 /* libPods-saywhat-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saywhat-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F52B72FF1C7BD1AD7FDB7D2 /* Pods-saywhat-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-saywhat-tvOSTests/Pods-saywhat-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		637AB686E052BA7F8EDEF6FD /* Pods-saywhat-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat-tvOS.release.xcconfig"; path = "Target Support Files/Pods-saywhat-tvOS/Pods-saywhat-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		8E44289E21ECDCDEE674D391 /* libPods-saywhat-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saywhat-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF475BC5DCD2DB0AF8F8953 /* Pods-saywhat-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-saywhat-tvOSTests/Pods-saywhat-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A061A43D0CE6863ACEE8E564 /* Pods-saywhat.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat.staging.xcconfig"; path = "Target Support Files/Pods-saywhat/Pods-saywhat.staging.xcconfig"; sourceTree = "<group>"; };
 		A884C76DA9A6118FA941D29A /* libPods-saywhatTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-saywhatTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6980FBCB1B4CDFC98DA24D /* Pods-saywhat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat.release.xcconfig"; path = "Target Support Files/Pods-saywhat/Pods-saywhat.release.xcconfig"; sourceTree = "<group>"; };
 		AE4CC1349B910A36790EA47A /* Pods-saywhat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat.debug.xcconfig"; path = "Target Support Files/Pods-saywhat/Pods-saywhat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		CA5FF1AE7A24CEB7AA2CD311 /* Pods-saywhatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhatTests.debug.xcconfig"; path = "Target Support Files/Pods-saywhatTests/Pods-saywhatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		EE0C262CB2F3D7D945833828 /* Pods-saywhat-tvOSTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat-tvOSTests.staging.xcconfig"; path = "Target Support Files/Pods-saywhat-tvOSTests/Pods-saywhat-tvOSTests.staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,10 @@
 				9AF475BC5DCD2DB0AF8F8953 /* Pods-saywhat-tvOSTests.release.xcconfig */,
 				CA5FF1AE7A24CEB7AA2CD311 /* Pods-saywhatTests.debug.xcconfig */,
 				1D60A5736B3310E298131D47 /* Pods-saywhatTests.release.xcconfig */,
+				A061A43D0CE6863ACEE8E564 /* Pods-saywhat.staging.xcconfig */,
+				344148773F59F01E20FE4954 /* Pods-saywhat-tvOS.staging.xcconfig */,
+				EE0C262CB2F3D7D945833828 /* Pods-saywhat-tvOSTests.staging.xcconfig */,
+				1A014C503611DF393D562782 /* Pods-saywhatTests.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -689,6 +697,7 @@
 			baseConfigurationReference = AE4CC1349B910A36790EA47A /* Pods-saywhat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODEPUSH_KEY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 9AGG7EUW88;
@@ -711,6 +720,7 @@
 			baseConfigurationReference = AA6980FBCB1B4CDFC98DA24D /* Pods-saywhat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODEPUSH_KEY = EGL6kbVebI4BRLAg4ia0ZJpk2jwWeqZwxdEh8;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AGG7EUW88;
 				INFOPLIST_FILE = saywhat/Info.plist;
@@ -936,6 +946,150 @@
 			};
 			name = Release;
 		};
+		B6246F5F23594BB200AB7B26 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
+		};
+		B6246F6023594BB200AB7B26 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A061A43D0CE6863ACEE8E564 /* Pods-saywhat.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODEPUSH_KEY = WqdqYu2uFCX4Y42SDKhOzmytO3RGrs1cjejc5;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AGG7EUW88;
+				INFOPLIST_FILE = saywhat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = saywhat;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Staging;
+		};
+		B6246F6123594BB200AB7B26 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A014C503611DF393D562782 /* Pods-saywhatTests.staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 9AGG7EUW88;
+				INFOPLIST_FILE = saywhatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saywhat.app/saywhat";
+			};
+			name = Staging;
+		};
+		B6246F6223594BB200AB7B26 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 344148773F59F01E20FE4954 /* Pods-saywhat-tvOS.staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "saywhat-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.saywhat-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Staging;
+		};
+		B6246F6323594BB200AB7B26 /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE0C262CB2F3D7D945833828 /* Pods-saywhat-tvOSTests.staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "saywhat-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.saywhat-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saywhat-tvOS.app/saywhat-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Staging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -944,6 +1098,7 @@
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
 				00E356F71AD99517003FC87E /* Release */,
+				B6246F6123594BB200AB7B26 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -953,6 +1108,7 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+				B6246F6023594BB200AB7B26 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -962,6 +1118,7 @@
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
 				2D02E4981E0B4A5E006451C7 /* Release */,
+				B6246F6223594BB200AB7B26 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -971,6 +1128,7 @@
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
 				2D02E49A1E0B4A5E006451C7 /* Release */,
+				B6246F6323594BB200AB7B26 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -980,6 +1138,7 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+				B6246F5F23594BB200AB7B26 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

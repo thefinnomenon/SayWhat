@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import normalize from '../../responsive';
 
 export interface Props {
-  icon?: Element;
+  icon?: JSX.Element;
   title: string;
   onPress?: () => void;
   showChevron?: boolean;

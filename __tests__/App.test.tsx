@@ -1,8 +1,37 @@
 import 'react-native';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import App from '../App';
+
+jest.mock('@sentry/react-native', () => {
+  return {
+    init: (opts: {}) => jest.fn(),
+  };
+});
+
+jest.mock('react-native-code-push', () => {
+  const cp = (opts: {}) => (app: ReactNode) => app;
+  Object.assign(cp, {
+    InstallMode: {},
+    CheckFrequency: {},
+    SyncStatus: {},
+    UpdateState: {},
+    DeploymentStatus: {},
+    DEFAULT_UPDATE_DIALOG: {},
+
+    checkForUpdate: jest.fn(),
+    codePushify: jest.fn(),
+    getConfiguration: jest.fn(),
+    getCurrentPackage: jest.fn(),
+    getUpdateMetadata: jest.fn(),
+    log: jest.fn(),
+    notifyAppReady: jest.fn(),
+    notifyApplicationReady: jest.fn(),
+    sync: jest.fn(),
+  });
+  return cp;
+});
 
 jest.mock('@react-native-community/audio-toolkit', () => {
   return {
