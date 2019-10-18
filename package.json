@@ -5,10 +5,15 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios:staging": "react-native run-ios --configuration Staging",
+    "ios:production": "react-native run-ios --configuration Production",
+    "android:staging": "react-native run-android --configuration Staging",
+    "android:production": "react-native run-android --configuration Production",
     "start": "react-native start",
     "ts-compile-check": "tsc -p tsconfig.json --noEmit",
     "test": "jest --coverage",
-    "icon": "npx app-icon generate -i publishing/icon.png"
+    "icon": "npx app-icon generate -i publishing/icon.png",
+    "rename": "react-native-rename"
   },
   "dependencies": {
     "@react-native-community/audio-toolkit": "^2.0.2",
