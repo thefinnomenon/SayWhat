@@ -108,6 +108,7 @@ const Word = styled.Text<Theme>`
   font-size: ${normalize(48)};
   font-weight: bold;
   margin: ${normalize(8)}px;
+  text-transform: capitalize;
 `;
 
 const BottomButton = styled(Button)<Theme>`
