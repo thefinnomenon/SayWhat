@@ -16,7 +16,7 @@ platform :ios do
     increment_build_number(build_number: build_number)
     version_number = get_version_number(xcodeproj: "saywhat.xcodeproj", target: "saywhat")   
     version_build = "v#{version_number}-#{build_number}"    
-    badge(shield: "#{version_build}-orange")
+    add_badge(shield: "#{version_build}-orange")
     commit_version_bump(message: "Bumped to #{version_build}", xcodeproj: "saywhat.xcodeproj")
     add_git_tag
     push_to_git_remote
