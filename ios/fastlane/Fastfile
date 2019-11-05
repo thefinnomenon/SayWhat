@@ -23,7 +23,6 @@ platform :ios do
 
   desc 'Build the iOS application'
   private_lane :build do
-    ensure_git_status_clean
     certificates
     version = bump_version
     add_badge(shield: "#{version}-orange")
