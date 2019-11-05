@@ -11,11 +11,16 @@ platform :ios do
   private_lane :build do
     ensure_git_status_clean
     certificates
-    increment_build_number(xcodeproj: "saywhat.xcodeproj")
-    commit_version_bump(xcodeproj: "saywhat.xcodeproj")
+    increment_build_number(bump_type: "major", xcodeproj: "saywhat.xcodeproj")
+    increment_build_number(build_number: build_number)
+    version_number = get_version_number(xcodeproj: "saywhat.xcodeproj")   
+    build_number = number_of_commits(all: true)
+    version_build = "v#{version_number}-#{build_number}"    
+    badge(shield: version_build)
+    commit_version_bump(message: "Bumped to #{version_build}", xcodeproj: "saywhat.xcodeproj")
     add_git_tag
     push_to_git_remote
-    gym(scheme: 'saywhat', clean: true, output_directory: './build')
+    gym(scheme: 'saywhat', clean: true, output_directory: './fastlane/build')
   end
 
   desc 'Push a new beta build to Testflight'
