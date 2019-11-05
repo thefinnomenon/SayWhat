@@ -1,37 +1,38 @@
 fastlane_version '2.134.0'
 
 platform :ios do
+  before_all do
+    ensure_git_status_clean
+    increment_build_number
+  end
+
   desc 'Fetch certificates and provisioning profiles'
   lane :certificates do
    match(app_identifier: 'com.thefinnternet.saywhat', type: 'development', readonly: true)
    match(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
   end
 
+  private_lane :bump_version do
+    build_number = get_build_number(xcodeproj: "Fitbay.xcodeproj")
+    version_number = increment_version_number(bump_type: "major", xcodeproj: "saywhat.xcodeproj")  
+    version_build = "v#{version_number}-#{build_number}"
+    commit_version_bump(message: "Bumped to #{version_build}  [skip ci]", xcodeproj: "saywhat.xcodeproj")
+    add_git_tag
+    version_build
+  end
+
   desc 'Build the iOS application'
   private_lane :build do
     ensure_git_status_clean
     certificates
-    build_number = number_of_commits(all: true)
-    increment_version_number(bump_type: "major", xcodeproj: "saywhat.xcodeproj")
-    increment_build_number(build_number: build_number)
-    version_number = get_version_number(xcodeproj: "saywhat.xcodeproj", target: "saywhat")   
-    version_build = "v#{version_number}-#{build_number}"    
-    add_badge(shield: "#{version_build}-orange")
-    commit_version_bump(message: "Bumped to #{version_build}", xcodeproj: "saywhat.xcodeproj", force: true)
-    add_git_tag
-    push_to_git_remote
+    version = bump_version
+    add_badge(shield: "#{version}-orange")
     gym(scheme: 'saywhat', clean: true, output_directory: './fastlane/build')
   end
 
   desc 'Push a new beta build to Testflight'
   lane :beta do
     build
-  end
-
-  desc 'Push a new beta build to Testflight'
-  lane :beta2 do
-    build
-    upload_to_testflight(skip_submission: true)
   end
 end
 
@@ -72,4 +73,9 @@ platform :android do
     )
     push_to_git_remote
   end
+end
+
+after_all do
+  reset_git_repo
+  push_to_git_remote
 end
