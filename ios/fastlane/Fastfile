@@ -14,7 +14,7 @@ platform :ios do
     build_number = number_of_commits(all: true)
     increment_version_number(bump_type: "major", xcodeproj: "saywhat.xcodeproj")
     increment_build_number(build_number: build_number)
-    version_number = get_version_number(xcodeproj: "saywhat.xcodeproj")   
+    version_number = get_version_number(xcodeproj: "saywhat.xcodeproj", target: "saywhat")   
     version_build = "v#{version_number}-#{build_number}"    
     badge(shield: "#{version_build}-orange")
     commit_version_bump(message: "Bumped to #{version_build}", xcodeproj: "saywhat.xcodeproj")
