@@ -76,6 +76,6 @@ platform :android do
 end
 
 after_all do
-  reset_git_repo
+  reset_git_repo(exclude: './fastlane/build')
   push_to_git_remote
 end
