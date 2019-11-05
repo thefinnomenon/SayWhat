@@ -15,7 +15,7 @@ platform :ios do
     commit_version_bump(message: 'Bump build')
     add_git_tag
     push_to_git_remote
-    gym(clean: true, output_directory: './build'),
+    gym(clean: true, output_directory: './build')
   end
 
   desc 'Push a new beta build to Testflight'
