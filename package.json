@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios:certificates": "fastlane ios certificates",
     "ios:staging": "react-native run-ios --configuration Staging",
     "ios:production": "react-native run-ios --configuration Production",
     "android:staging": "react-native run-android --configuration Staging",

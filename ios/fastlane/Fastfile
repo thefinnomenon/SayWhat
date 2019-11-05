@@ -1,0 +1,70 @@
+fastlane_version '2.134.0'
+
+platform :ios do
+  desc 'Fetch certificates and provisioning profiles'
+  lane :certificates do
+   match(app_identifier: 'com.thefinnternet.saywhat', type: 'development', readonly: true)
+   match(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
+  end
+
+  desc 'Build the iOS application'
+  private_lane :build do
+    ensure_git_status_clean
+    certificates
+    increment_build_number
+    commit_version_bump(message: 'Bump build')
+    add_git_tag
+    push_to_git_remote
+    gym(clean: true, output_directory: './build'),
+  end
+
+  desc 'Push a new beta build to Testflight'
+  lane :beta do
+    build
+  end
+
+  desc 'Push a new beta build to Testflight'
+  lane :beta2 do
+    build
+    upload_to_testflight(skip_submission: true)
+  end
+end
+
+platform :android do
+  desc 'Build the Android application.'
+  private_lane :build do
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
+  end
+  desc 'Bump version code.'
+  private_lane :bump_version_code do |options|
+    path = '../android/app/build.gradle'
+    re = /versionCode\s+(\d+)/ 
+    s = File.read(path)
+    versionCode = google_play_track_version_codes(track: options[:track])[0]
+    s[re, 1] = (versionCode + 1).to_s
+  
+    f = File.new(path, 'w')
+    f.write(s)
+    f.close
+    git_commit(path: ["./android/app/build.gradle"], message: 'Bump versionCode')
+  end
+  desc 'Ship to Playstore Alph testing.'
+  lane :beta do
+    bump_version_code(track: "alpha")
+    build
+    supply(track: 'alpha', track_promote_to: 'alpha')
+    add_git_tag(
+      tag: "@Alpha-android-v1.0-vc" + google_play_track_version_codes(track: "alpha")[0].to_s
+    )
+    push_to_git_remote
+  end
+  desc 'Release to app store.'
+  lane :playstore do
+    supply(track: 'alpha', track_promote_to: "production")
+    add_git_tag(
+      tag: "@android-v1.0-vc" + google_play_track_version_codes(track: "production")[0].to_s
+    )
+    push_to_git_remote
+  end
+end
