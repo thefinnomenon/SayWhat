@@ -17,7 +17,7 @@ platform :ios do
     version_number = get_version_number(xcodeproj: "saywhat.xcodeproj", target: "saywhat")   
     version_build = "v#{version_number}-#{build_number}"    
     add_badge(shield: "#{version_build}-orange")
-    commit_version_bump(message: "Bumped to #{version_build}", xcodeproj: "saywhat.xcodeproj")
+    commit_version_bump(message: "Bumped to #{version_build}", xcodeproj: "saywhat.xcodeproj", force: true)
     add_git_tag
     push_to_git_remote
     gym(scheme: 'saywhat', clean: true, output_directory: './fastlane/build')
