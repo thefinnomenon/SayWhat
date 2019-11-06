@@ -38,5 +38,5 @@ end
 
 # This lane is called, only if the executed lane was successful
 after_all do
-
+  reset_git_repo
 end
