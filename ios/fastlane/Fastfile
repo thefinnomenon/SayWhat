@@ -7,8 +7,8 @@ platform :ios do
 
   desc 'Fetch certificates and provisioning profiles'
   lane :certificates do
-   match(app_identifier: 'com.thefinnternet.saywhat', type: 'development', readonly: true)
-   match(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
+   sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'development', readonly: true)
+   sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
   end
 
   private_lane :bump_version do
