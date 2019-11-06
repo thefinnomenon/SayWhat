@@ -30,7 +30,7 @@ platform :ios do
   lane :beta do
     #add_badge # Add beta label to icon, need to ignore icon changes before commit though
     build
-    commit_version_bump(message: 'Build Version Bump by fastlane')
+    commit_version_bump(message: 'Build Version Bump by fastlane', xcodeproj: "saywhat.xcodeproj")
     build_number = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
     add_git_tag(tag: "testflight-#{build_number} [skip ci]")
     push_to_git_remote
