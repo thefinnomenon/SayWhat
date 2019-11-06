@@ -26,7 +26,7 @@ platform :ios do
     certificates
     version = bump_version
     add_badge(shield: "#{version}-orange")
-    gym(scheme: 'saywhat', clean: true, include_bitcode: false, output_directory: './fastlane/build')
+    gym(scheme: 'saywhat', clean: true,  output_directory: './fastlane/build')
   end
 
   desc 'Push a new beta build to Testflight'
