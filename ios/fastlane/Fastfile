@@ -3,7 +3,7 @@ fastlane_version '2.134.0'
 platform :ios do
   before_all do
     ensure_git_status_clean
-    increment_build_number
+    cocoapods
   end
 
   desc 'Fetch certificates and provisioning profiles'
@@ -16,60 +16,23 @@ platform :ios do
     build_number = get_build_number(xcodeproj: "saywhat.xcodeproj")
     version_number = increment_version_number(bump_type: "major", xcodeproj: "saywhat.xcodeproj")  
     version_build = "v#{version_number}-#{build_number}"
-    add_git_tag
-    commit_version_bump(message: "Bumped to #{version_build}  [skip ci]", xcodeproj: "saywhat.xcodeproj")
-    version_build
+    add_git_tag(tag: "testflight-#{build_number}")
   end
 
   desc 'Build the iOS application'
   private_lane :build do
     certificates
-    version = bump_version
-    add_badge(shield: "#{version}-orange")
+    increment_build_number
     gym(scheme: 'saywhat', clean: true,  output_directory: './fastlane/build')
   end
 
   desc 'Push a new beta build to Testflight'
   lane :beta do
+    #add_badge # Add beta label to icon, need to ignore icon changes before commit though
     build
-  end
-end
-
-platform :android do
-  desc 'Build the Android application.'
-  private_lane :build do
-    gradle(task: 'clean', project_dir: 'android/')
-    gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
-  end
-  desc 'Bump version code.'
-  private_lane :bump_version_code do |options|
-    path = '../android/app/build.gradle'
-    re = /versionCode\s+(\d+)/ 
-    s = File.read(path)
-    versionCode = google_play_track_version_codes(track: options[:track])[0]
-    s[re, 1] = (versionCode + 1).to_s
-  
-    f = File.new(path, 'w')
-    f.write(s)
-    f.close
-    git_commit(path: ["./android/app/build.gradle"], message: 'Bump versionCode')
-  end
-  desc 'Ship to Playstore Alph testing.'
-  lane :beta do
-    bump_version_code(track: "alpha")
-    build
-    supply(track: 'alpha', track_promote_to: 'alpha')
-    add_git_tag(
-      tag: "@Alpha-android-v1.0-vc" + google_play_track_version_codes(track: "alpha")[0].to_s
-    )
-    push_to_git_remote
-  end
-  desc 'Release to app store.'
-  lane :playstore do
-    supply(track: 'alpha', track_promote_to: "production")
-    add_git_tag(
-      tag: "@android-v1.0-vc" + google_play_track_version_codes(track: "production")[0].to_s
-    )
+    commit_version_bump(message: 'Build Version Bump by fastlane')
+    build_number = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
+    add_git_tag(tag: "testflight-#{build_number} [skip ci]")
     push_to_git_remote
   end
 end
@@ -78,9 +41,7 @@ error do |lane, exception|
   reset_git_repo
 end
 
+# This lane is called, only if the executed lane was successful
 after_all do
-  # This is to clear the badged icon changes
-  #reset_git_repo(exclude: 'fastlane/build')
-  # Push the version bump
-  #push_to_git_remote
+
 end
