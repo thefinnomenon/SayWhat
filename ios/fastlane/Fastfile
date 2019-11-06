@@ -79,6 +79,8 @@ error do |lane, exception|
 end
 
 after_all do
-  reset_git_repo(exclude: 'fastlane/build')
-  push_to_git_remote
+  # This is to clear the badged icon changes
+  #reset_git_repo(exclude: 'fastlane/build')
+  # Push the version bump
+  #push_to_git_remote
 end
