@@ -16,8 +16,8 @@ platform :ios do
     build_number = get_build_number(xcodeproj: "saywhat.xcodeproj")
     version_number = increment_version_number(bump_type: "major", xcodeproj: "saywhat.xcodeproj")  
     version_build = "v#{version_number}-#{build_number}"
-    commit_version_bump(message: "Bumped to #{version_build}  [skip ci]", xcodeproj: "saywhat.xcodeproj")
     add_git_tag
+    commit_version_bump(message: "Bumped to #{version_build}  [skip ci]", xcodeproj: "saywhat.xcodeproj")
     version_build
   end
 
@@ -26,7 +26,7 @@ platform :ios do
     certificates
     version = bump_version
     add_badge(shield: "#{version}-orange")
-    gym(clean: true, output_directory: './fastlane/build')
+    gym(scheme: 'saywhat', clean: true, output_directory: './fastlane/build')
   end
 
   desc 'Push a new beta build to Testflight'
