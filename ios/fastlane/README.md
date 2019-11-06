@@ -25,7 +25,7 @@ Fetch certificates and provisioning profiles
 ```
 fastlane ios beta
 ```
-Push a new beta build to Testflight
+Build and push a new beta build to Testflight
 
 ----
 
