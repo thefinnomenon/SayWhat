@@ -25,6 +25,7 @@ platform :ios do
     build_number = increment_build_number
     #add_badge # Add beta label to icon, need to ignore icon changes before commit though
     build_app(scheme: 'saywhat', clean: true,  output_directory: './fastlane/build')
+    upload_to_testflight
     commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "saywhat.xcodeproj")
     add_git_tag(tag: "testflight-#{build_number}")
     push_to_git_remote
