@@ -20,11 +20,10 @@ platform :ios do
 
   desc 'Build and push a new beta build to Testflight'
   lane :beta do
-    sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
-    cocoapods(podfile: './ios/')
-    #build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
+    #sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
+    #cocoapods(podfile: './ios/')
+    build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
     add_badge
-    sh("git checkout -- ios/saywhat/Images.xcassets/AppIcon.appiconset/ ")
     #build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", clean: true,  output_directory: './fastlane/build')
     #upload_to_testflight(
     #  beta_app_description: "This is a description of my app",
@@ -38,7 +37,7 @@ platform :ios do
     #    contact_phone: "7817891371"
     #  },
     #)
-    #commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "./ios/saywhat.xcodeproj")
+    commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "./ios/saywhat.xcodeproj", ignore: ['ios/saywhat/Images.xcassets/AppIcon.appiconset/*'])
     #add_git_tag(tag: "testflight-#{build_number}")
     #push_to_git_remote
   end
