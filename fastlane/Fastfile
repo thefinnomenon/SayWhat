@@ -40,11 +40,11 @@ platform :ios do
     reset_git_repo(
       force: true,
       files: [
-        './ios/saywhat/Images.xcassets/AppIcon.appiconset/'
+        "./ios/saywhat/Images.xcassets/AppIcon.appiconset/"
       ]
     )
-    commit_version_bump(message: 'Build version bump by fastlane [#{build_number}] [skip ci]', xcodeproj: './ios/saywhat.xcodeproj')
-    add_git_tag(tag: 'testflight-#{build_number}')
+    commit_version_bump(message: "Build version bump by fastlane [#{build_number}] [skip ci]", xcodeproj: "./ios/saywhat.xcodeproj")
+    add_git_tag(tag: "testflight-#{build_number}")
     push_to_git_remote
   end
 end
