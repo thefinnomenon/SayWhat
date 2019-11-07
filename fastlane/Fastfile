@@ -22,7 +22,7 @@ platform :ios do
   lane :beta do
     sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
     cocoapods(podfile: './ios/')
-    build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
+    #build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
     add_badge
     sh("git checkout -- './ios/saywhat/Images.xcassets/AppIcon.appiconset/')
     #build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", clean: true,  output_directory: './fastlane/build')
