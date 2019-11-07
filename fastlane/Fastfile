@@ -24,7 +24,7 @@ platform :ios do
     cocoapods(podfile: './ios/')
     #build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
     add_badge
-    sh("git checkout -- './ios/saywhat/Images.xcassets/AppIcon.appiconset/')
+    sh("git checkout -- ios/saywhat/Images.xcassets/AppIcon.appiconset/ ")
     #build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", clean: true,  output_directory: './fastlane/build')
     #upload_to_testflight(
     #  beta_app_description: "This is a description of my app",
