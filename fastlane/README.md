@@ -21,6 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane ios certificates
 ```
 Fetch certificates and provisioning profiles
+### ios test
+```
+fastlane ios test
+```
+
 ### ios beta
 ```
 fastlane ios beta
