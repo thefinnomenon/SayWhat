@@ -37,7 +37,8 @@ platform :ios do
     #    contact_phone: "7817891371"
     #  },
     #)
-    sh("git checkout -- ios/saywhat/Images.xcassets/AppIcon.appiconset/")
+    #sh("git checkout -- ios/saywhat/Images.xcassets/AppIcon.appiconset/")
+    sh("git restore --source=HEAD --staged --worktree -- ios/saywhat/Images.xcassets/AppIcon.appiconset/")
     commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "./ios/saywhat.xcodeproj")
     #add_git_tag(tag: "testflight-#{build_number}")
     #push_to_git_remote
@@ -45,7 +46,7 @@ platform :ios do
 end
 
 error do |lane, exception|
-  reset_git_repo
+  #reset_git_repo
 end
 
 # This lane is called, only if the executed lane was successful
