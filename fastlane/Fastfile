@@ -12,27 +12,35 @@ platform :ios do
   end
 
   private_lane :bump_version do
-    build_number = get_build_number(xcodeproj: "saywhat.xcodeproj")
-    version_number = increment_version_number(bump_type: "major", xcodeproj: "saywhat.xcodeproj")  
+    build_number = get_build_number(xcodeproj: "./ios/saywhat.xcodeproj")
+    version_number = increment_version_number(bump_type: "major", xcodeproj: "./ios/saywhat.xcodeproj")  
     version_build = "v#{version_number}-#{build_number}"
     add_git_tag(tag: "testflight-#{build_number}")
-  end
-
-  lane :test do
-    puts "Hey!"
   end
 
   desc 'Build and push a new beta build to Testflight'
   lane :beta do
     sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
-    cocoapods
-    build_number = increment_build_number
-    #add_badge # Add beta label to icon, need to ignore icon changes before commit though
-    build_app(scheme: 'saywhat', clean: true,  output_directory: './fastlane/build')
-    upload_to_testflight
-    commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "saywhat.xcodeproj")
-    add_git_tag(tag: "testflight-#{build_number}")
-    push_to_git_remote
+    cocoapods(podfile: './ios/')
+    build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
+    add_badge
+    #sh("git checkout -- './ios/'
+    #build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", clean: true,  output_directory: './fastlane/build')
+    #upload_to_testflight(
+    #  beta_app_description: "This is a description of my app",
+    #  demo_account_required: false,
+    #  notify_external_testers: true,
+    #  distribute_external: false,
+    #  beta_app_review_info: {
+    #    contact_email: "chris@finn.com",
+    #    contact_first_name: "Chris",
+    #    contact_last_name: "Finn",
+    #    contact_phone: "7817891371"
+    #  },
+    #)
+    #commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "./ios/saywhat.xcodeproj")
+    #add_git_tag(tag: "testflight-#{build_number}")
+    #push_to_git_remote
   end
 end
 
@@ -42,5 +50,5 @@ end
 
 # This lane is called, only if the executed lane was successful
 after_all do
-  reset_git_repo
+  #reset_git_repo
 end
