@@ -20,11 +20,11 @@ platform :ios do
 
   desc 'Build and push a new beta build to Testflight'
   lane :beta do
-    #sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
-    #cocoapods(podfile: './ios/')
+    sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
+    cocoapods(podfile: './ios/')
     build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
     add_badge
-    #build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", clean: true,  output_directory: './fastlane/build')
+    build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", clean: true,  output_directory: './fastlane/build')
     #upload_to_testflight(
     #  beta_app_description: "This is a description of my app",
     #  demo_account_required: false,
@@ -37,23 +37,24 @@ platform :ios do
     #    contact_phone: "7817891371"
     #  },
     #)
+    # Reset app icons
     reset_git_repo(
       force: true,
       files: [
-        "./ios/saywhat/Images.xcassets/AppIcon.appiconset/"
+        './ios/saywhat/Images.xcassets/AppIcon.appiconset/'
       ]
     )
-    commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "./ios/saywhat.xcodeproj")
-    #add_git_tag(tag: "testflight-#{build_number}")
-    #push_to_git_remote
+    commit_version_bump(message: 'Build version bump by fastlane [#{build_number}] [skip ci]', xcodeproj: './ios/saywhat.xcodeproj')
+    add_git_tag(tag: 'testflight-#{build_number}')
+    push_to_git_remote
   end
 end
 
 error do |lane, exception|
-  #reset_git_repo
+  reset_git_repo
 end
 
 # This lane is called, only if the executed lane was successful
 after_all do
-  #reset_git_repo
+  reset_git_repo
 end
