@@ -37,8 +37,12 @@ platform :ios do
     #    contact_phone: "7817891371"
     #  },
     #)
-    #sh("git checkout -- ios/saywhat/Images.xcassets/AppIcon.appiconset/")
-    sh("git restore --source=HEAD --staged --worktree -- ios/saywhat/Images.xcassets/AppIcon.appiconset/")
+    reset_git_repo(
+      force: true,
+      files: [
+        "./ios/saywhat/Images.xcassets/AppIcon.appiconset/"
+      ]
+    )
     commit_version_bump(message: 'Build version bump by fastlane [skip ci]', xcodeproj: "./ios/saywhat.xcodeproj")
     #add_git_tag(tag: "testflight-#{build_number}")
     #push_to_git_remote
