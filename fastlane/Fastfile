@@ -18,6 +18,11 @@ platform :ios do
     add_git_tag(tag: "testflight-#{build_number}")
   end
 
+  desc 'Codepush to iOS beta'
+  lane :codepush_beta do
+    sh("appcenter codepush release-react -a thefinnomenon/SayWhat-iOS")
+  end
+
   desc 'Build and push a new beta build to Testflight'
   lane :beta do
     sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)

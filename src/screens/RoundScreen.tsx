@@ -181,6 +181,7 @@ const WinAlert = styled.View<Theme>`
 
 const WinAlertText = styled.Text<Theme>`
   font-size: ${normalize(40)};
+  color: ${props => props.theme.colors.text};
 `;
 
 const TitleContainer = styled.View`

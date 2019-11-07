@@ -49,6 +49,7 @@ Array [
           style={
             Array [
               Object {
+                "color": "#202020",
                 "fontSize": 80,
               },
             ]
