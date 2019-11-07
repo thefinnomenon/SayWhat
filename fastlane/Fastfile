@@ -25,19 +25,18 @@ platform :ios do
     build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
     add_badge
     build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", clean: true,  output_directory: './fastlane/build')
-    #upload_to_testflight(
-    #  beta_app_description: "This is a description of my app",
-    #  demo_account_required: false,
-    #  notify_external_testers: true,
-    #  distribute_external: false,
-    #  beta_app_review_info: {
-    #    contact_email: "chris@finn.com",
-    #    contact_first_name: "Chris",
-    #    contact_last_name: "Finn",
-    #    contact_phone: "7817891371"
-    #  },
-    #)
-    # Reset app icons
+    upload_to_testflight(
+      beta_app_description: "This is a description of my app",
+      demo_account_required: false,
+      notify_external_testers: true,
+      distribute_external: false,
+      beta_app_review_info: {
+        contact_email: "chris@finn.com",
+        contact_first_name: "Chris",
+        contact_last_name: "Finn",
+        contact_phone: "7817891371"
+      },
+    )
     reset_git_repo(
       force: true,
       files: [
