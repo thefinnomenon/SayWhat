@@ -104,26 +104,6 @@ exports[`renders correctly 1`] = `
                 ]
               }
             />
-            <Image
-              source={
-                Object {
-                  "testUri": "../../../assets/images/logo.png",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "height": 500,
-                    "marginBottom": "auto",
-                    "marginLeft": "auto",
-                    "marginRight": "auto",
-                    "marginTop": "auto",
-                    "resizeMode": "contain",
-                    "width": 500,
-                  },
-                ]
-              }
-            />
             <View
               style={
                 Array [
