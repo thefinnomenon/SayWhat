@@ -20,7 +20,9 @@ platform :ios do
 
   desc 'Codepush to iOS beta'
   lane :codepush_beta do
-    sh("appcenter codepush release-react -a thefinnomenon/SayWhat-iOS")
+    Dir.chdir("..") do
+      sh("appcenter codepush release-react -a thefinnomenon/SayWhat-iOS")
+    end
   end
 
   desc 'Build and push a new beta build to Testflight'
