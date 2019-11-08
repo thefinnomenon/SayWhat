@@ -14,6 +14,7 @@ export const HomeScreen = () => {
     <Container>
       <Spacer />
       <Logo source={require('../../assets/images/logo.png')} />
+      <Logo source={require('../../assets/images/logo.png')} />
       <Spacer />
       <ButtonsContainer>
         <StyledButton onPress={() => navigate('Decks')} title={t('PLAY')} />
