@@ -33,15 +33,15 @@ class SayWhat_UITests: XCTestCase {
         app.launch()
                   
         // Helps us not to continue before react has compiled its stuff and actually loaded the application
-        XCUIApplication().otherElements["BTN_PLAY"].waitForExistence(timeout: 30)
+        sleep(60)
         snapshot("01Main")
-        XCUIApplication().otherElements["BTN_PLAY"].tap()
+        app.staticTexts["BTN_PLAY"].tap()
         sleep(3)
         snapshot("02Decks")
-        XCUIApplication().otherElements["DECK_Media"].tap()
+        app.staticTexts["DECK_Media"].tap()
         sleep(3)
         snapshot("03Round")
-        XCUIApplication().otherElements["BTN_START"].tap()
+        app.staticTexts["BTN_START"].tap()
         sleep(3)
         snapshot("04Game")
     }
