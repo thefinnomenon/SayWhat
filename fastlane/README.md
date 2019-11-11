@@ -31,6 +31,16 @@ Codepush to iOS beta
 fastlane ios beta
 ```
 Build and push a new beta build to Testflight
+### ios screenshots
+```
+fastlane ios screenshots
+```
+Take screenshots for iOS app
+### ios release
+```
+fastlane ios release
+```
+Build and push a new release build to the App Store
 
 ----
 

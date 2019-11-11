@@ -58,7 +58,7 @@ platform :ios do
 
   desc 'Take screenshots for iOS app'
   lane :screenshots do
-    capture_screenshots
+    capture_screenshots(stop_after_first_error: true, workspace: './ios/saywhat.xcworkspace')
   end
 
   desc 'Build and push a new release build to the App Store'
