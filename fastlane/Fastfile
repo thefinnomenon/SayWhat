@@ -44,6 +44,7 @@ platform :ios do
         contact_phone: "7817891371"
       },
     )
+    # This is needed to undo the badge changes to the app icons
     reset_git_repo(
       force: true,
       files: [
@@ -52,6 +53,24 @@ platform :ios do
     )
     commit_version_bump(message: "Build version bump by fastlane [#{build_number}] [skip ci]", xcodeproj: "./ios/saywhat.xcodeproj")
     add_git_tag(tag: "testflight-#{build_number}")
+    push_to_git_remote
+  end
+
+  desc 'Take screenshots for iOS app'
+  lane :screenshots do
+    capture_screenshots
+  end
+
+  desc 'Build and push a new release build to the App Store'
+  lane :release do
+    sync_code_signing(app_identifier: 'com.thefinnternet.saywhat', type: 'appstore', readonly: true)
+    cocoapods(podfile: './ios/')
+    build_number = increment_build_number(xcodeproj: './ios/saywhat.xcodeproj')
+    #capture_screenshots
+    build_app(scheme: 'saywhat', workspace: "./ios/saywhat.xcworkspace", configuration: "Release", clean: true,  output_directory: "./fastlane/build")
+    upload_to_app_store
+    commit_version_bump(message: "Build version bump by fastlane [#{build_number}] [skip ci]", xcodeproj: "./ios/saywhat.xcodeproj")
+    add_git_tag(tag: "release-#{build_number}")
     push_to_git_remote
   end
 end
