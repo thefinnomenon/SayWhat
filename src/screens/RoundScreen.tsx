@@ -95,6 +95,7 @@ export const RoundScreen = () => {
         <BottomButton
           disabled={!scoreWasUpdated}
           title={t('START GAME')}
+          testID={'BTN_START'}
           onPress={() => startRound(round)}
         />
       );
@@ -104,6 +105,7 @@ export const RoundScreen = () => {
         <BottomButton
           disabled={!scoreWasUpdated}
           title={t('START NEW GAME')}
+          testID={'BTN_START'}
           onPress={() => {
             restartGame();
           }}
@@ -114,6 +116,7 @@ export const RoundScreen = () => {
       <BottomButton
         disabled={!scoreWasUpdated}
         title={t('START ROUND')}
+        testID={'BTN_START'}
         onPress={() => startRound(round)}
       />
     );

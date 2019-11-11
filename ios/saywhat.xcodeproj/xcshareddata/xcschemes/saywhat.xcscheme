@@ -75,6 +75,16 @@
                ReferencedContainer = "container:saywhat.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B6F4B3132379E25F007446FA"
+               BuildableName = "SayWhat_UITests.xctest"
+               BlueprintName = "SayWhat_UITests"
+               ReferencedContainer = "container:saywhat.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

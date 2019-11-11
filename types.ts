@@ -30,6 +30,7 @@ export type Theme = {
       textAlt: string;
     };
   };
+  testID?: string;
 };
 
 export type ScreenProps = {

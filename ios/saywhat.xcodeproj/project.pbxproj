@@ -22,6 +22,8 @@
 		B10BB0E6F0A65F52824F7382 /* libPods-saywhat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 006E936DCC3EBB9497BD74F6 /* libPods-saywhat.a */; };
 		B65DF444235264BE002A7989 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B65DF443235264BE002A7989 /* win.mp3 */; };
 		B67C2171235242A4007C62AF /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B67C2170235242A4007C62AF /* beep.mp3 */; };
+		B6F4B3172379E25F007446FA /* SayWhat_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4B3162379E25F007446FA /* SayWhat_UITests.swift */; };
+		B6F4B3202379E348007446FA /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4B31F2379E348007446FA /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "saywhat-tvOS";
+		};
+		B6F4B3192379E25F007446FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = saywhat;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,6 +80,10 @@
 		AE4CC1349B910A36790EA47A /* Pods-saywhat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhat.debug.xcconfig"; path = "Target Support Files/Pods-saywhat/Pods-saywhat.debug.xcconfig"; sourceTree = "<group>"; };
 		B65DF443235264BE002A7989 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 		B67C2170235242A4007C62AF /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		B6F4B3142379E25F007446FA /* SayWhat_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SayWhat_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F4B3162379E25F007446FA /* SayWhat_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayWhat_UITests.swift; sourceTree = "<group>"; };
+		B6F4B3182379E25F007446FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6F4B31F2379E348007446FA /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		CA5FF1AE7A24CEB7AA2CD311 /* Pods-saywhatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-saywhatTests.debug.xcconfig"; path = "Target Support Files/Pods-saywhatTests/Pods-saywhatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -110,12 +123,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6F4B3112379E25F007446FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		00E356EF1AD99517003FC87E /* saywhatTests */ = {
 			isa = PBXGroup;
 			children = (
+				B6F4B31F2379E348007446FA /* SnapshotHelper.swift */,
 				00E356F21AD99517003FC87E /* saywhatTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
@@ -172,6 +193,7 @@
 				13B07FAE1A68108700A75B9A /* saywhat */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* saywhatTests */,
+				B6F4B3152379E25F007446FA /* SayWhat_UITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				852C11B72F70C980B561514D /* Pods */,
@@ -188,6 +210,7 @@
 				00E356EE1AD99517003FC87E /* saywhatTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* saywhat-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* saywhat-tvOSTests.xctest */,
+				B6F4B3142379E25F007446FA /* SayWhat_UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +232,15 @@
 				1A014C503611DF393D562782 /* Pods-saywhatTests.staging.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B6F4B3152379E25F007446FA /* SayWhat_UITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6F4B3162379E25F007446FA /* SayWhat_UITests.swift */,
+				B6F4B3182379E25F007446FA /* Info.plist */,
+			);
+			path = SayWhat_UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,12 +325,31 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* saywhat-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B6F4B3132379E25F007446FA /* SayWhat_UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6F4B31E2379E25F007446FA /* Build configuration list for PBXNativeTarget "SayWhat_UITests" */;
+			buildPhases = (
+				B6F4B3102379E25F007446FA /* Sources */,
+				B6F4B3112379E25F007446FA /* Frameworks */,
+				B6F4B3122379E25F007446FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6F4B31A2379E25F007446FA /* PBXTargetDependency */,
+			);
+			name = SayWhat_UITests;
+			productName = SayWhat_UITests;
+			productReference = B6F4B3142379E25F007446FA /* SayWhat_UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
@@ -318,6 +369,12 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
+					};
+					B6F4B3132379E25F007446FA = {
+						CreatedOnToolsVersion = 11.2.1;
+						DevelopmentTeam = 9AGG7EUW88;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 				};
 			};
@@ -339,6 +396,7 @@
 				00E356ED1AD99517003FC87E /* saywhatTests */,
 				2D02E47A1E0B4A5D006451C7 /* saywhat-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* saywhat-tvOSTests */,
+				B6F4B3132379E25F007446FA /* SayWhat_UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -371,6 +429,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6F4B3122379E25F007446FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -619,6 +684,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6F4B3102379E25F007446FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6F4B3172379E25F007446FA /* SayWhat_UITests.swift in Sources */,
+				B6F4B3202379E348007446FA /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -631,6 +705,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* saywhat-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		B6F4B31A2379E25F007446FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* saywhat */;
+			targetProxy = B6F4B3192379E25F007446FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1090,6 +1169,88 @@
 			};
 			name = Staging;
 		};
+		B6F4B31B2379E25F007446FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9AGG7EUW88;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SayWhat_UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefinnternet.SayWhat-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = saywhat;
+			};
+			name = Debug;
+		};
+		B6F4B31C2379E25F007446FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9AGG7EUW88;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SayWhat_UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefinnternet.SayWhat-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = saywhat;
+			};
+			name = Release;
+		};
+		B6F4B31D2379E25F007446FA /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9AGG7EUW88;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SayWhat_UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thefinnternet.SayWhat-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = saywhat;
+			};
+			name = Staging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1139,6 +1300,16 @@
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
 				B6246F5F23594BB200AB7B26 /* Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6F4B31E2379E25F007446FA /* Build configuration list for PBXNativeTarget "SayWhat_UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6F4B31B2379E25F007446FA /* Debug */,
+				B6F4B31C2379E25F007446FA /* Release */,
+				B6F4B31D2379E25F007446FA /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

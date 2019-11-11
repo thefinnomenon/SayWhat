@@ -12,7 +12,7 @@ type DeckProps = {
 };
 
 export const Deck = ({ category, imageSrc, onPress }: DeckProps) => (
-  <Card onPress={() => onPress(category)}>
+  <Card testID={`DECK_${category}`} onPress={() => onPress(category)}>
     <ImageBackground
       source={imageSrc as ImageSourcePropType}
       imageStyle={styles.image}>

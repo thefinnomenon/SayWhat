@@ -16,7 +16,11 @@ export const HomeScreen = () => {
       <Logo source={require('../../assets/images/logo.png')} />
       <Spacer />
       <ButtonsContainer>
-        <StyledButton onPress={() => navigate('Decks')} title={t('PLAY')} />
+        <StyledButton
+          testID="BTN_PLAY"
+          onPress={() => navigate('Decks')}
+          title={t('PLAY')}
+        />
         <StyledButton onPress={() => navigate('Rules')} title={t('RULES')} />
         <StyledButton
           onPress={() => navigate('Settings')}
