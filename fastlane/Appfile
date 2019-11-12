@@ -16,5 +16,7 @@ team_id("9AGG7EUW88") # Developer Portal Team ID
 #itc_team_id "TEAM ID"# Team ID for your itunes connect account
 
 # Android config
-#json_key_file "./path-to-json-key.json"# JSON key generated for the android play store account instructions for creating at: https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials
-#package_name "com.android.package.id" # Application id for the android app found in build.gradle file
+# JSON key generated for the android play store [https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials]
+json_key_file "./path-to-json-key.json"
+# Application id for the android app found in build.gradle file
+package_name "com.thefinnomenon.saywhat"

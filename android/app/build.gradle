@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.saywhat"
+        applicationId "com.thefinnomenon.saywhat"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
