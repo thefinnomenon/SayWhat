@@ -36,11 +36,30 @@ Build and push a new beta build to Testflight
 fastlane ios screenshots
 ```
 Take screenshots for iOS app
+### ios codepush_release
+```
+fastlane ios codepush_release
+```
+Codepush to release app
 ### ios release
 ```
 fastlane ios release
 ```
 Build and push a new release build to the App Store
+
+----
+
+## Android
+### android test
+```
+fastlane android test
+```
+
+### android beta
+```
+fastlane android beta
+```
+
 
 ----
 

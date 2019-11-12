@@ -82,6 +82,27 @@ platform :ios do
   end
 end
 
+platform :android do
+  before_all do
+    ensure_git_status_clean
+  end
+
+  lane :test do
+    gradle(task: "test", project_dir: "./android/")
+  end
+
+  lane :beta do
+    # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
+    gradle(
+      task: "assemble",
+      build_type: "Release",
+      project_dir: "./android/"
+    )
+
+    # ...
+  end
+end
+
 #error do |lane, exception|
 #end
 
