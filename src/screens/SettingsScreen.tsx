@@ -1,11 +1,13 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { Theme, ScreenProps } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../../contexts/ManageThemeContext';
 import i18n from 'i18next';
+import { useSelector } from '../redux';
+import { setTheme } from '../features/theming/ThemingSlice';
+import { setLanguage } from '../features/i18n/i18nSlice';
+import { useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Row from '../components/Row';
 import normalize from '../../responsive';
@@ -22,9 +24,10 @@ const themes = [
 ];
 
 export const SettingsScreen = () => {
-  const theme = useTheme();
-  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const currentTheme = useSelector(state => state.theming.currentTheme);
   const { navigate } = useNavigation();
+  const { t } = useTranslation();
 
   return (
     <Container>
@@ -34,11 +37,12 @@ export const SettingsScreen = () => {
           title={t('Language')}
           onPress={() =>
             navigate('SettingList', {
-              title: t('Language'),
+              title: 'Language',
               options: languages,
               selectedKey: i18n.language,
               onSelect: (language: string) => {
                 if (language !== i18n.language) {
+                  dispatch(setLanguage(language as LanguageKey));
                   i18n.changeLanguage(language);
                 }
               },
@@ -54,16 +58,16 @@ export const SettingsScreen = () => {
           title={t('Theme')}
           onPress={() =>
             navigate('SettingList', {
-              title: t('Theme'),
+              title: 'Theme',
               options: themes,
-              selectedKey: theme.mode,
+              selectedKey: currentTheme,
               onSelect: (thm: string) => {
-                theme.setMode(thm);
+                dispatch(setTheme(thm as ThemeKey));
               },
             })
           }
           renderAccessory={() => (
-            <Value transform="capitalize">{t(theme.mode)}</Value>
+            <Value transform="capitalize">{t(currentTheme)}</Value>
           )}
           showChevron
         />
@@ -80,21 +84,21 @@ SettingsScreen.navigationOptions = ({
   title: screenProps.t('Settings'),
 });
 
-const Container = styled.View<Theme>`
+const Container = styled.View`
   flex: 1;
   background: ${props => props.theme.colors.background};
 `;
 
-type ValueProps = {
+interface ValueProps {
   transform: 'uppercase' | 'lowercase' | 'capitalize' | 'none';
-} & Theme;
+}
 const Value = styled.Text<ValueProps>`
   color: ${props => props.theme.colors.textAlt};
   text-transform: ${props => props.transform || 'none'};
   font-size: ${normalize(18)};
 `;
 
-const StyledIcon = styled(Icon)<Theme>`
+const StyledIcon = styled(Icon)`
   font-size: ${normalize(20)};
   margin-right: ${normalize(12)};
   color: ${props => props.theme.colors.text};

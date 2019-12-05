@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import normalize from '../../responsive';
@@ -53,7 +52,7 @@ const TitlesContainer = styled.View`
   align-self: center;
 `;
 
-const Title = styled.Text<Theme>`
+const Title = styled.Text`
   color: ${props => props.theme.colors.text};
   font-size: ${normalize(18)};
   margin-right: ${normalize(15)};
@@ -63,7 +62,7 @@ const AccessoryContainer = styled.View`
   margin-right: ${normalize(12)};
 `;
 
-const StyledIcon = styled(Icon)<Theme>`
+const StyledIcon = styled(Icon)`
   font-size: ${normalize(18)};
   margin-right: ${normalize(12)};
   color: ${props => props.theme.colors.text};

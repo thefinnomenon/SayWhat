@@ -1,6 +1,5 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
-import { Theme, ScreenProps } from '../../types';
 import styled from 'styled-components/native';
 import { useTranslation } from 'react-i18next';
 import normalize from '../../responsive';
@@ -45,12 +44,12 @@ RulesScreen.navigationOptions = ({
   title: screenProps.t('Rules'),
 });
 
-const Container = styled.View<Theme>`
+const Container = styled.View`
   flex: 1;
   background: ${props => props.theme.colors.background};
 `;
 
-const Line = styled.Text<Theme>`
+const Line = styled.Text`
   color: ${props => props.theme.colors.text};
   font-size: ${normalize(20)};
   margin: ${normalize(10)}px;

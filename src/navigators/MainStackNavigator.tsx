@@ -1,5 +1,4 @@
 import React from 'react';
-import { ScreenProps, Theme } from '../../types';
 import { createStackNavigator } from 'react-navigation-stack';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import HomeScreen from '../screens/HomeScreen';
@@ -52,7 +51,7 @@ export const MainStackNavigator = createStackNavigator(
   },
 );
 
-const StyledIcon = styled(Icon)<Theme>`
+const StyledIcon = styled(Icon)`
   font-size: ${normalize(20)};
   margin-left: ${normalize(20)}px;
   color: ${props => props.theme.nav.tintColor};

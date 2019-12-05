@@ -1,5 +1,4 @@
 import React from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
@@ -16,11 +15,7 @@ export const HomeScreen = () => {
       <Logo source={require('../../assets/images/logo.png')} />
       <Spacer />
       <ButtonsContainer>
-        <StyledButton
-          testID="BTN_PLAY"
-          onPress={() => navigate('Decks')}
-          title={t('PLAY')}
-        />
+        <StyledButton onPress={() => navigate('Decks')} title={t('PLAY')} />
         <StyledButton onPress={() => navigate('Rules')} title={t('RULES')} />
         <StyledButton
           onPress={() => navigate('Settings')}
@@ -32,12 +27,12 @@ export const HomeScreen = () => {
   );
 };
 
-const Container = styled.View<Theme>`
+const Container = styled.View`
   flex: 1;
   background: ${props => props.theme.colors.background};
 `;
 
-const Logo = styled.Image<Theme>`
+const Logo = styled.Image`
   height: ${normalize(250)};
   width: ${normalize(250)};
   margin: auto;
@@ -52,7 +47,7 @@ const ButtonsContainer = styled.View`
   margin: auto;
 `;
 
-const StyledButton = styled(Button)<Theme>`
+const StyledButton = styled(Button)`
   margin: ${normalize(6)}px;
 `;
 

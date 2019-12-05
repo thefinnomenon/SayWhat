@@ -149,6 +149,14 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
     }
     buildTypes {
         debug {
@@ -156,10 +164,13 @@ android {
             buildConfigField "String", "CODEPUSH_KEY", '""'
         }
         releaseStaging {
+            signingConfig signingConfigs.release
+            applicationIdSuffix ".releasestaging" 
             buildConfigField "String", "CODEPUSH_KEY", '"xg1ZnXaQLGJ9i0UCZ_aqH7SLZWAzjdgFCKcUF"'
             matchingFallbacks = ['release']
         }
         release {
+            signingConfig signingConfigs.release
             // Caution! In production, you need to generate your own keystore file.
             // see https://facebook.github.io/react-native/docs/signed-apk-android.
             signingConfig signingConfigs.debug
@@ -193,6 +204,7 @@ dependencies {
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")
+        releasestagingImplementation files(hermesPath +"hermes-release.aar")
         releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {
         implementation jscFlavor

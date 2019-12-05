@@ -1,5 +1,4 @@
 import React from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import normalize from '../../responsive';
 
@@ -24,7 +23,7 @@ export const ScoreDisplay = ({
   </ScoreDisplayContainer>
 );
 
-const ScoreDisplayContainer = styled.TouchableOpacity<Theme>`
+const ScoreDisplayContainer = styled.TouchableOpacity`
   flex: 4;
   width: 80%;
   height: 100%;
@@ -36,7 +35,7 @@ const ScoreDisplayContainer = styled.TouchableOpacity<Theme>`
   background: ${props => props.theme.colors.primary};
 `;
 
-const ScoreContainer = styled.View<Theme>`
+const ScoreContainer = styled.View`
   flex: 1;
   width: 85%;
   margin: ${normalize(10)}px;
@@ -46,7 +45,7 @@ const ScoreContainer = styled.View<Theme>`
   background: ${props => props.theme.colors.background};
 `;
 
-const TeamName = styled.Text<Theme>`
+const TeamName = styled.Text`
   color: ${props => props.theme.colors.background};
   font-size: ${normalize(24)};
   font-weight: bold;
@@ -54,7 +53,7 @@ const TeamName = styled.Text<Theme>`
   margin: ${normalize(8)}px;
 `;
 
-const Score = styled.Text<Theme>`
+const Score = styled.Text`
   color: ${props => props.theme.colors.text};
   font-size: ${normalize(48)};
   text-align: center;

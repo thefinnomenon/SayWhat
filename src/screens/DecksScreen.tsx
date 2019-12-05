@@ -1,5 +1,4 @@
 import React from 'react';
-import { Theme, ScreenProps } from '../../types';
 import styled from 'styled-components/native';
 import { ScrollView } from 'react-native';
 import { useNavigation } from 'react-navigation-hooks';
@@ -72,7 +71,7 @@ export const DecksScreen = () => {
   );
 };
 
-const Container = styled.View<Theme>`
+const Container = styled.View`
   flex: 1;
   background: ${props => props.theme.colors.background};
 `;

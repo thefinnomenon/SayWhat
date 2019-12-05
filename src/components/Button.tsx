@@ -1,5 +1,4 @@
 import React from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import normalize from '../../responsive';
 
@@ -16,7 +15,7 @@ export const Button = ({ title, onPress, disabled, style }: Props) => (
   </Container>
 );
 
-const Container = styled.TouchableOpacity<Theme>`
+const Container = styled.TouchableOpacity`
   flex: 1;
   justify-content: center;
   align-content: center;
@@ -24,7 +23,7 @@ const Container = styled.TouchableOpacity<Theme>`
   border-radius: ${normalize(10)};
 `;
 
-const Title = styled.Text<Theme>`
+const Title = styled.Text`
   color: ${props => props.theme.colors.background};
   font-size: ${normalize(20)};
   font-weight: bold;

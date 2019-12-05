@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigationParam } from 'react-navigation-hooks';
 import ListRow from '../components/ListRow';
@@ -38,11 +37,11 @@ export const SettingListScreen = () => {
 };
 
 // @ts-ignore: react-navigation has messed up types
-SettingListScreen.navigationOptions = ({ navigation }) => ({
-  title: navigation.getParam('title', 'Title'),
+SettingListScreen.navigationOptions = ({ navigation, screenProps }) => ({
+  title: screenProps.t(navigation.getParam('title', 'Title')),
 });
 
-const Container = styled.View<Theme>`
+const Container = styled.View`
   flex: 1;
   background: ${props => props.theme.colors.background};
 `;

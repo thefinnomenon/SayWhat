@@ -1,5 +1,4 @@
 import React from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { ImageSourcePropType, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -34,14 +33,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const Card = styled.TouchableOpacity<Theme>`
+const Card = styled.TouchableOpacity`
   height: ${normalize(250)};
   width: 45%;
   margin: ${normalize(8)}px;
   border-radius: ${normalize(10)};
 `;
 
-const ImageBackground = styled.ImageBackground<Theme>`
+const ImageBackground = styled.ImageBackground`
   flex: 1;
   justify-content: flex-end;
   align-items: center;
@@ -56,7 +55,7 @@ const Scrim = styled(LinearGradient)`
   border-radius: ${normalize(10)};
 `;
 
-const Title = styled.Text<Theme>`
+const Title = styled.Text`
   color: white;
   font-size: ${normalize(28)};
   font-weight: bold;

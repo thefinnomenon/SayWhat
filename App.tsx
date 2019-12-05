@@ -1,39 +1,48 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import codePush from 'react-native-code-push';
-import * as Sentry from '@sentry/react-native';
-import { ThemeContext } from 'styled-components/native';
-import ThemeManager from './contexts/ManageThemeContext';
+import { useSelector } from './src/redux';
+import { ThemeProvider } from 'styled-components/native';
 import { I18nextProvider, useTranslation } from 'react-i18next';
-import i18 from './i18n';
+import i18n from './src/features/i18n/i18n';
 import { useScreens } from 'react-native-screens';
 import { createAppContainer } from 'react-navigation';
 import MainStackNavigator from './src/navigators/MainStackNavigator';
-
-if (!__DEV__) {
-  Sentry.init({
-    dsn: 'https://63b702731ca744e2b68026bd81a2cfb2@sentry.io/1783469',
-  });
-}
+import { StatusBar } from 'react-native';
 
 const AppContainer = createAppContainer(MainStackNavigator);
 
-const Wrapper = () => {
-  const themeContext = useContext(ThemeContext);
+// Can't access t without cresting a separate component
+const App = () => {
+  const theme = useSelector(state => state.theming.theme);
   const { t } = useTranslation();
 
-  return <AppContainer screenProps={{ theme: themeContext, t }} />;
+  return <AppContainer screenProps={{ theme, t }} />;
 };
 
-const App = () => {
+const WrappedApp = () => {
   useScreens();
 
+  const theme = useSelector(state => state.theming.theme);
+  const currentLanguage = useSelector(state => state.i18n.currentLanguage);
+  if (currentLanguage) {
+    i18n.changeLanguage(currentLanguage);
+  }
+
   return (
-    <ThemeManager>
-      <I18nextProvider i18n={i18}>
-        <Wrapper />
+    <ThemeProvider theme={theme}>
+      <StatusBar barStyle={theme.nav.statusBar} />
+      <I18nextProvider i18n={i18n}>
+        <App />
       </I18nextProvider>
-    </ThemeManager>
+    </ThemeProvider>
   );
 };
 
-export default codePush()(App);
+let Application = WrappedApp;
+
+// If release
+if (!__DEV__) {
+  Application = codePush()(WrappedApp);
+}
+
+export default Application;

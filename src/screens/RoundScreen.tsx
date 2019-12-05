@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useNavigation, useNavigationParam } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
@@ -9,6 +8,7 @@ import Button from '../components/Button';
 import Score from '../components/Score';
 import { Alert, Modal } from 'react-native';
 import QuitButton from '../components/QuitButton';
+import { useSelector } from '../redux';
 
 const SCORE_GOAL = 5;
 
@@ -95,7 +95,6 @@ export const RoundScreen = () => {
         <BottomButton
           disabled={!scoreWasUpdated}
           title={t('START GAME')}
-          testID={'BTN_START'}
           onPress={() => startRound(round)}
         />
       );
@@ -105,7 +104,6 @@ export const RoundScreen = () => {
         <BottomButton
           disabled={!scoreWasUpdated}
           title={t('START NEW GAME')}
-          testID={'BTN_START'}
           onPress={() => {
             restartGame();
           }}
@@ -116,7 +114,6 @@ export const RoundScreen = () => {
       <BottomButton
         disabled={!scoreWasUpdated}
         title={t('START ROUND')}
-        testID={'BTN_START'}
         onPress={() => startRound(round)}
       />
     );
@@ -164,14 +161,14 @@ export const RoundScreen = () => {
   );
 };
 
-const Container = styled.View<Theme>`
+const Container = styled.View`
   flex: 1;
   justify-content: space-between;
   align-items: center;
   background: ${props => props.theme.colors.background};
 `;
 
-const WinAlert = styled.View<Theme>`
+const WinAlert = styled.View`
   justify-content: center;
   align-items: center;
   width: 80%;
@@ -182,7 +179,7 @@ const WinAlert = styled.View<Theme>`
   border-radius: ${normalize(10)};
 `;
 
-const WinAlertText = styled.Text<Theme>`
+const WinAlertText = styled.Text`
   font-size: ${normalize(40)};
   color: ${props => props.theme.colors.text};
 `;
@@ -193,7 +190,7 @@ const TitleContainer = styled.View`
   align-items: center;
 `;
 
-const ScoreContainer = styled.View<Theme>`
+const ScoreContainer = styled.View`
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
@@ -201,14 +198,14 @@ const ScoreContainer = styled.View<Theme>`
   width: 80%;
 `;
 
-const Title = styled.Text<Theme>`
+const Title = styled.Text`
   color: ${props => props.theme.colors.text};
   font-size: ${normalize(48)};
   font-weight: bold;
   margin: ${normalize(8)}px;
 `;
 
-const BottomButton = styled(Button)<Theme>`
+const BottomButton = styled(Button)`
   position: absolute;
   bottom: 0;
   left: 0;

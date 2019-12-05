@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -26,7 +25,7 @@ const ListRow = ({ id, value, isSelected, onSelect }: Props) => {
   );
 };
 
-const RowContainer = styled.TouchableOpacity<Theme>`
+const RowContainer = styled.TouchableOpacity`
   height: ${normalize(46)};
   flex-direction: row;
   justify-content: space-between;
@@ -35,8 +34,7 @@ const RowContainer = styled.TouchableOpacity<Theme>`
 
 type TitleProps = {
   isSelected: boolean;
-} & Theme;
-
+};
 const Title = styled.Text<TitleProps>`
   margin-left: ${normalize(8)}px;
   color: ${props => props.theme.colors.text};
@@ -44,7 +42,7 @@ const Title = styled.Text<TitleProps>`
   font-size: ${normalize(18)};
 `;
 
-const RowDivider = styled.View<Theme>`
+const RowDivider = styled.View`
   height: ${normalize(1)};
   width: 95%;
   margin: auto;

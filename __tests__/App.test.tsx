@@ -2,13 +2,11 @@ import 'react-native';
 import React, { ReactNode } from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+// @ts-ignore: No types
+import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 import App from '../App';
 
-jest.mock('@sentry/react-native', () => {
-  return {
-    init: (opts: {}) => jest.fn(),
-  };
-});
+jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 
 jest.mock('react-native-code-push', () => {
   const cp = (opts: {}) => (app: ReactNode) => app;
@@ -42,6 +40,7 @@ jest.mock('@react-native-community/audio-toolkit', () => {
     }),
   };
 });
+
 it('renders correctly', () => {
   const tree = renderer.create(<App />).toJSON();
   expect(tree).toMatchSnapshot();

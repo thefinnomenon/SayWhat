@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Theme } from '../../types';
 import styled from 'styled-components/native';
 import { Button } from '../components/Button';
 import { useNavigationParam, useNavigation } from 'react-navigation-hooks';
@@ -9,6 +8,7 @@ import { AndroidBackHandler } from 'react-navigation-backhandler';
 import { Alert } from 'react-native';
 import QuitButton from '../components/QuitButton';
 import normalize from '../../responsive';
+import { useSelector } from '../redux';
 
 const ROUND_LENGTH_MS = 54000;
 
@@ -90,7 +90,7 @@ const quitConfirmation = (navigate, t) =>
     { cancelable: true },
   );
 
-const Container = styled.View<Theme>`
+const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -103,7 +103,7 @@ const WordContainer = styled.View`
   align-items: center;
 `;
 
-const Word = styled.Text<Theme>`
+const Word = styled.Text`
   color: ${props => props.theme.colors.text};
   font-size: ${normalize(48)};
   font-weight: bold;
@@ -111,7 +111,7 @@ const Word = styled.Text<Theme>`
   text-transform: capitalize;
 `;
 
-const BottomButton = styled(Button)<Theme>`
+const BottomButton = styled(Button)`
   position: absolute;
   bottom: 0;
   left: 0;
