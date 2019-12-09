@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { useNavigation, useNavigationParam } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import { Player } from '@react-native-community/audio-toolkit';
+import { AndroidBackHandler } from 'react-navigation-backhandler';
 import normalize from '../utilities/responsive';
 import gameReducer, { initialState, actions } from '../features/game/gameSlice';
 import Button from '../components/Button';
@@ -45,6 +46,12 @@ export const RoundScreen = () => {
   return (
     <>
       <Container>
+        <AndroidBackHandler
+          onBackPress={() => {
+            quitConfirmation(navigate, t);
+            return true;
+          }}
+        />
         <Modal
           animationType="slide"
           transparent={true}
@@ -161,18 +168,18 @@ const Spacer = styled.View<SpacerProps>`
 `;
 
 // @ts-ignore: react-navigation types
-const quitConfirmation = navigation =>
+const quitConfirmation = (navigate, t) =>
   Alert.alert(
-    'Quit Confirmation',
-    'Are you sure you want to quit the current game?',
+    t('Quit Confirmation'),
+    t('Are you sure you want to quit the current game?'),
     [
       {
-        text: 'Cancel',
+        text: t('Cancel'),
         style: 'cancel',
       },
       {
-        text: 'Yes',
-        onPress: () => navigation.navigate('Home'),
+        text: t('Yes'),
+        onPress: () => navigate('Home'),
       },
     ],
     { cancelable: true },
@@ -187,7 +194,11 @@ RoundScreen.navigationOptions = ({ navigation, screenProps }) => ({
     backgroundColor: screenProps.theme.colors.background,
     borderBottomWidth: 0,
   },
-  headerLeft: <QuitButton onPress={() => quitConfirmation(navigation)} />,
+  headerLeft: (
+    <QuitButton
+      onPress={() => quitConfirmation(navigation.navigate, screenProps.t)}
+    />
+  ),
 });
 
 export default RoundScreen;

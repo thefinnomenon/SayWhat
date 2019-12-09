@@ -54,7 +54,7 @@ export const GameScreen = () => {
       <AndroidBackHandler
         onBackPress={() => {
           quitConfirmation(navigate, t);
-          return false;
+          return true;
         }}
       />
       <Container>
@@ -72,7 +72,7 @@ export const GameScreen = () => {
   );
 };
 
-// @ts-ignore: react-navigation has messed up types
+// @ts-ignore: react-navigation types
 const quitConfirmation = (navigate, t) =>
   Alert.alert(
     t('Quit Confirmation'),
@@ -128,7 +128,7 @@ const Spacer = styled.View<SpacerProps>`
   flex: ${props => props.flex};
 `;
 
-// @ts-ignore: react-navigation has messed up types
+// @ts-ignore: react-navigation types
 GameScreen.navigationOptions = ({ navigation, screenProps }) => ({
   title: `${screenProps.t('Round')} ${navigation.getParam('round', '')}`,
   gesturesEnabled: false,
