@@ -22,7 +22,7 @@ i18n.use(initReactI18next).init({
   nsSeparator: false,
   keySeparator: false,
   fallbackLng: false,
-  debug: true,
+  debug: false,
   interpolation: {
     escapeValue: false,
     formatSeparator: ',',

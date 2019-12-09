@@ -12,11 +12,12 @@ import normalize from '../utilities/responsive';
 const ROUND_LENGTH_MS = 54000;
 
 export const GameScreen = () => {
+  const { t } = useTranslation();
+  const { navigate } = useNavigation();
+
   const words = useNavigationParam('words');
   const round = useNavigationParam('round');
   const onRoundComplete = useNavigationParam('onRoundComplete');
-  const { t } = useTranslation();
-  const { navigate } = useNavigation();
 
   const getRandomWord = () => {
     return words[Math.round(Math.round(Math.random() * (words.length - 1)))];
@@ -41,9 +42,9 @@ export const GameScreen = () => {
   useEffect(() => {
     const beep = new Player('beep.mp3', { autoDestroy: false });
     beep.play();
-    const beepRateTimeout = setTimeout(() => beep.stop(), ROUND_LENGTH_MS);
+    const beepTimeout = setTimeout(() => beep.stop(), ROUND_LENGTH_MS);
     return () => {
-      clearTimeout(beepRateTimeout);
+      clearTimeout(beepTimeout);
       beep.destroy();
     };
   }, []);
