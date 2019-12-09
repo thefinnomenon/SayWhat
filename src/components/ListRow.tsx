@@ -2,14 +2,14 @@ import * as React from 'react';
 import styled from 'styled-components/native';
 import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
-type Props = {
+interface Props {
   id: string;
   value: string;
   isSelected: boolean;
   onSelect: (key: string) => void;
-};
+}
 
 const ListRow = ({ id, value, isSelected, onSelect }: Props) => {
   const { t } = useTranslation();
@@ -32,9 +32,9 @@ const RowContainer = styled.TouchableOpacity`
   align-items: center;
 `;
 
-type TitleProps = {
+interface TitleProps {
   isSelected: boolean;
-};
+}
 const Title = styled.Text<TitleProps>`
   margin-left: ${normalize(8)}px;
   color: ${props => props.theme.colors.text};

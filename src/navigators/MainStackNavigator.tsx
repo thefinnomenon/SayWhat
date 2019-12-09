@@ -8,7 +8,7 @@ import GameScreen from '../screens/GameScreen';
 import DecksScreen from '../screens/DecksScreen';
 import RoundScreen from '../screens/RoundScreen';
 import RulesScreen from '../screens/RulesScreen';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 

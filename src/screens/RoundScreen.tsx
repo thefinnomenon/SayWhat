@@ -1,122 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import styled from 'styled-components/native';
 import { useNavigation, useNavigationParam } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import { Player } from '@react-native-community/audio-toolkit';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
+import gameReducer, { initialState, actions } from '../features/game/gameSlice';
 import Button from '../components/Button';
 import Score from '../components/Score';
 import { Alert, Modal } from 'react-native';
 import QuitButton from '../components/QuitButton';
-import { useSelector } from '../redux';
-
-const SCORE_GOAL = 5;
-
-const initialState = Object.freeze({
-  words: [],
-  winner: '',
-  winSound: null,
-  isModalVisable: false,
-  round: 1,
-  teamA: 0,
-  teamB: 0,
-  scoreWasUpdated: true,
-});
 
 export const RoundScreen = () => {
-  const wordList = useNavigationParam('wordList');
-  const { default: wordlist } = wordList;
-  const [words, setWords] = useState(wordlist);
-  const [winner, setWinner] = useState(initialState.winner);
-  const [isModalVisable, setIsModalVisable] = useState(
-    initialState.isModalVisable,
-  );
-  const [round, setRound] = useState(initialState.round);
-  const [teamA, setTeamA] = useState(initialState.teamA);
-  const [teamB, setTeamB] = useState(initialState.teamB);
-  const [scoreWasUpdated, setScoreWasUpdated] = useState(
-    initialState.scoreWasUpdated,
-  );
-
-  useEffect(() => {
-    const winAlertTimeout = setTimeout(() => setIsModalVisable(false), 3000);
-    return () => clearTimeout(winAlertTimeout);
-  }, [isModalVisable]);
-
   const { navigate } = useNavigation();
   const { t } = useTranslation();
 
-  const updateScore = (team: string) => {
-    switch (team) {
-      case 'A':
-        setTeamA(teamA + 1);
-        if (teamA + 1 === SCORE_GOAL) {
-          setWinner('A');
-          setIsModalVisable(true);
-          const win = new Player('win.mp3');
-          win.play();
-        }
-        break;
-      case 'B':
-        setTeamB(teamB + 1);
-        if (teamB + 1 === SCORE_GOAL) {
-          setWinner('B');
-          setIsModalVisable(true);
-          const win = new Player('win.mp3');
-          win.play();
-        }
+  const wordList = useNavigationParam('wordList');
+  const { default: wordlist } = wordList;
+  const [state, dispatch] = useReducer(gameReducer, {
+    ...initialState,
+    words: wordlist,
+  });
+
+  useEffect(() => {
+    if (state.isModalVisible) {
+      setTimeout(() => dispatch(actions.clearModal()), 3000);
+      const win = new Player('win.mp3');
+      win.play();
     }
+  }, [state.isModalVisible]);
 
-    setScoreWasUpdated(true);
-  };
-
-  const onRoundComplete = (currRound: number) => {
-    setRound(currRound + 1);
-    setScoreWasUpdated(false);
+  const onRoundComplete = () => {
+    dispatch(actions.endRound());
     navigate('Round');
   };
 
-  const startRound = (currRound: number) => {
-    navigate('Game', { words, round: currRound, onRoundComplete });
-  };
-
-  const restartGame = () => {
-    setRound(initialState.round);
-    setWinner(initialState.winner);
-    setTeamA(initialState.teamA);
-    setTeamB(initialState.teamB);
-    setScoreWasUpdated(initialState.scoreWasUpdated);
-    startRound(initialState.round);
-  };
-
-  const startButton = () => {
-    if (round === 1) {
-      return (
-        <BottomButton
-          disabled={!scoreWasUpdated}
-          title={t('START GAME')}
-          onPress={() => startRound(round)}
-        />
-      );
-    }
-    if (winner !== '') {
-      return (
-        <BottomButton
-          disabled={!scoreWasUpdated}
-          title={t('START NEW GAME')}
-          onPress={() => {
-            restartGame();
-          }}
-        />
-      );
-    }
-    return (
-      <BottomButton
-        disabled={!scoreWasUpdated}
-        title={t('START ROUND')}
-        onPress={() => startRound(round)}
-      />
-    );
+  const play = (round: number) => {
+    navigate('Game', {
+      words: state.words,
+      round: round,
+      onRoundComplete,
+    });
   };
 
   return (
@@ -125,38 +48,53 @@ export const RoundScreen = () => {
         <Modal
           animationType="slide"
           transparent={true}
-          visible={isModalVisable}
+          visible={state.isModalVisible}
           onRequestClose={() => {
-            setIsModalVisable(false);
+            dispatch(actions.clearModal);
           }}>
           <WinAlert>
-            <WinAlertText>{`${t('Team')} ${winner} ${t(
+            <WinAlertText>{`${t('Team')} ${state.winner} ${t(
               'wins',
             )}!`}</WinAlertText>
           </WinAlert>
         </Modal>
         <TitleContainer>
-          <Title>{`${t('Round')} ${round}`}</Title>
+          <Title>{`${t('Round')} ${state.round}`}</Title>
         </TitleContainer>
         <Spacer flex={1} />
         <ScoreContainer>
           <Score
             teamName="A"
-            score={teamA}
-            disabled={scoreWasUpdated}
-            onPress={() => updateScore('A')}
+            score={state.teamA}
+            disabled={state.scoreWasUpdated}
+            onPress={() => dispatch(actions.updateScore('A'))}
           />
           <Spacer flex={1} />
           <Score
             teamName="B"
-            score={teamB}
-            disabled={scoreWasUpdated}
-            onPress={() => updateScore('B')}
+            score={state.teamB}
+            disabled={state.scoreWasUpdated}
+            onPress={() => dispatch(actions.updateScore('B'))}
           />
         </ScoreContainer>
         <Spacer flex={3} />
       </Container>
-      {startButton()}
+      {state.status === 'PLAYING' ? (
+        <BottomButton
+          disabled={!state.scoreWasUpdated}
+          title={t('START ROUND')}
+          onPress={() => play(state.round)}
+        />
+      ) : (
+        <BottomButton
+          disabled={!state.scoreWasUpdated}
+          title={t('START GAME')}
+          onPress={() => {
+            dispatch(actions.startGame());
+            play(1);
+          }}
+        />
+      )}
     </>
   );
 };
@@ -215,14 +153,14 @@ const BottomButton = styled(Button)`
   background: ${props => props.theme.colors.primary};
 `;
 
-type SpacerProps = {
+interface SpacerProps {
   flex: number;
-};
+}
 const Spacer = styled.View<SpacerProps>`
   flex: ${props => props.flex};
 `;
 
-// @ts-ignore: react-navigation has messed up types
+// @ts-ignore: react-navigation types
 const quitConfirmation = navigation =>
   Alert.alert(
     'Quit Confirmation',
@@ -240,7 +178,7 @@ const quitConfirmation = navigation =>
     { cancelable: true },
   );
 
-// @ts-ignore: react-navigation has messed up types
+// @ts-ignore: react-navigation types
 RoundScreen.navigationOptions = ({ navigation, screenProps }) => ({
   title: '',
   gesturesEnabled: false,

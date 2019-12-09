@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
 export interface Props {
   icon?: JSX.Element;

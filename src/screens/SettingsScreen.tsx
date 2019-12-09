@@ -10,7 +10,7 @@ import { setLanguage } from '../features/i18n/i18nSlice';
 import { useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Row from '../components/Row';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
 const languages = [
   { key: 'en', value: 'English' },

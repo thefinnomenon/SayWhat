@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 import styled from 'styled-components/native';
 import { useTranslation } from 'react-i18next';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
 export const RulesScreen = () => {
   const { t } = useTranslation();

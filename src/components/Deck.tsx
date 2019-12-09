@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { ImageSourcePropType, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
-type DeckProps = {
+interface DeckProps {
   category: string;
   imageSrc: string;
   onPress(category: string): void;
-};
+}
 
 export const Deck = ({ category, imageSrc, onPress }: DeckProps) => (
   <Card testID={`DECK_${category}`} onPress={() => onPress(category)}>

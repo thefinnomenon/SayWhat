@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
-type ScoreDisplayProps = {
+interface ScoreDisplayProps {
   teamName: string;
   score: number;
   disabled?: boolean;
   onPress(team: string): void;
-};
+}
 
 export const ScoreDisplay = ({
   teamName,

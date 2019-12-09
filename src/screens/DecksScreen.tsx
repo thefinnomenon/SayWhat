@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native';
 import { useNavigation } from 'react-navigation-hooks';
 import { useTranslation } from 'react-i18next';
 import Deck from '../components/Deck';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
 export const decks = [
   {

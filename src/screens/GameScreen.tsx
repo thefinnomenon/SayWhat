@@ -7,8 +7,7 @@ import { Player } from '@react-native-community/audio-toolkit';
 import { AndroidBackHandler } from 'react-navigation-backhandler';
 import { Alert } from 'react-native';
 import QuitButton from '../components/QuitButton';
-import normalize from '../../responsive';
-import { useSelector } from '../redux';
+import normalize from '../utilities/responsive';
 
 const ROUND_LENGTH_MS = 54000;
 
@@ -121,9 +120,9 @@ const BottomButton = styled(Button)`
   background: ${props => props.theme.colors.primary};
 `;
 
-type SpacerProps = {
+interface SpacerProps {
   flex: number;
-};
+}
 const Spacer = styled.View<SpacerProps>`
   flex: ${props => props.flex};
 `;

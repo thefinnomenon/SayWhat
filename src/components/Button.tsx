@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import normalize from '../../responsive';
+import normalize from '../utilities/responsive';
 
-type Props = {
+interface Props {
   title: string;
   onPress(): void;
   disabled?: boolean;
   style?: {};
-};
+}
 
 export const Button = ({ title, onPress, disabled, style }: Props) => (
   <Container disabled={disabled} onPress={() => onPress()} style={style}>

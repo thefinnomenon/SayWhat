@@ -11,7 +11,7 @@ import { StatusBar } from 'react-native';
 
 const AppContainer = createAppContainer(MainStackNavigator);
 
-// Can't access t without cresting a separate component
+// Can't access t without creating a separate component
 const App = () => {
   const theme = useSelector(state => state.theming.theme);
   const { t } = useTranslation();
