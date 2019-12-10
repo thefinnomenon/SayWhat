@@ -1,4 +1,4 @@
-import plants_and_animals from './animals_and_plants';
+import plants_and_animals from './plants_and_animals';
 import around_the_house from './around_the_house';
 import food_and_drink from './food_and_drink';
 import geography from './geography';

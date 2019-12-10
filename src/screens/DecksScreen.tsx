@@ -44,8 +44,8 @@ export const decks = [
   },
   {
     category: 'Plants & Animals',
-    imageSrc: require('../../assets/images/animals_and_plants.jpeg'),
-    wordList: require('../../assets/wordlists/animals_and_plants.ts'),
+    imageSrc: require('../../assets/images/plants_and_animals.jpeg'),
+    wordList: require('../../assets/wordlists/plants_and_animals.ts'),
   },
 ];
 
