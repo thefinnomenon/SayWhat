@@ -37,16 +37,29 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = configureStore({
-  reducer: persistedReducer,
-  middleware: [
+let middleware = [];
+if (process.env.NODE_ENV === 'development') {
+  middleware = [
     ...getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
     logger,
-  ],
+  ];
+} else {
+  middleware = [
+    ...getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+  ];
+}
+
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware,
 });
 
 export const useSelector: TypedUseSelectorHook<RootState> = useReduxSelector;

@@ -1,16 +1,15 @@
 import 'react-native';
 import React from 'react';
-import { render, fireEvent } from 'react-native-testing-library';
+import { render } from 'react-native-testing-library';
 import 'jest-styled-components';
-import { navigate } from '../__mocks__/react-navigation-hooks';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { ThemeProvider } from 'styled-components';
 import light from '../src/features/theming/themes/light';
 import { I18nextProvider } from 'react-i18next';
-import i18n from './__helpers__/i18n';
+import i18n from './utilities/i18n';
 
-import DecksScreen, { decks } from '../src/screens/DecksScreen';
+import DecksScreen from '../src/screens/DecksScreen';
 
 describe('The Decks Screen', () => {
   const initialState = { output: 10 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
+import codePush from 'react-native-code-push';
 import 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -15,4 +16,11 @@ const WrappedApp = () => (
   </Provider>
 );
 
-AppRegistry.registerComponent(appName, () => WrappedApp);
+let Application = WrappedApp;
+
+// If release
+if (!__DEV__) {
+  Application = codePush()(WrappedApp);
+}
+
+AppRegistry.registerComponent(appName, () => Application);

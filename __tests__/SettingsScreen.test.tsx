@@ -7,7 +7,7 @@ import configureStore from 'redux-mock-store';
 import { ThemeProvider } from 'styled-components';
 import light from '../src/features/theming/themes/light';
 import { I18nextProvider } from 'react-i18next';
-import i18n from './__helpers__/i18n';
+import i18n from './utilities/i18n';
 
 import SettingsScreen from '../src/screens/SettingsScreen';
 

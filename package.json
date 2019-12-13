@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator=\"iPhone 11\"",
+    "cocoapods": "cd ios && pod install && cd ..",
     "ios:device": "react-native run-ios --device",
     "ios:certificates": "fastlane ios certificates",
     "ios:staging": "react-native run-ios --configuration Staging",
@@ -196,8 +197,10 @@
       "node"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>/e2e",
-      "node_modules/(?!((jest-)?react-native|react-native-screens|react-navigation|@react-navigation/.*))"
+      "<rootDir>/e2e"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!react-native|react-native-screens|react-navigation|@react-navigation/.*|@react-native-community/async-storage/jest/async-storage-mock)"
     ],
     "setupFiles": [
       "./node_modules/react-native-gesture-handler/jestSetup.js"

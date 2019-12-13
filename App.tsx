@@ -1,13 +1,14 @@
 import React from 'react';
-import codePush from 'react-native-code-push';
 import { useSelector } from './src/redux';
 import { ThemeProvider } from 'styled-components/native';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 import i18n from './src/features/i18n/i18n';
-import { useScreens } from 'react-native-screens';
+import { enableScreens } from 'react-native-screens';
 import { createAppContainer } from 'react-navigation';
 import MainStackNavigator from './src/navigators/MainStackNavigator';
 import { StatusBar } from 'react-native';
+
+enableScreens();
 
 const AppContainer = createAppContainer(MainStackNavigator);
 
@@ -20,8 +21,6 @@ const App = () => {
 };
 
 const WrappedApp = () => {
-  useScreens();
-
   const theme = useSelector(state => state.theming.theme);
   const currentLanguage = useSelector(state => state.i18n.currentLanguage);
   if (currentLanguage) {
@@ -38,11 +37,4 @@ const WrappedApp = () => {
   );
 };
 
-let Application = WrappedApp;
-
-// If release
-if (!__DEV__) {
-  Application = codePush()(WrappedApp);
-}
-
-export default Application;
+export default WrappedApp;
