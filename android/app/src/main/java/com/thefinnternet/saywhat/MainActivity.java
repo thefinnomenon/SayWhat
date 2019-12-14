@@ -1,4 +1,4 @@
-package com.saywhat;
+package com.thefinnternet.saywhat;
 
 import com.facebook.react.ReactActivity;
 

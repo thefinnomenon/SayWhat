@@ -1,9 +1,9 @@
 import 'react-native';
 import React from 'react';
 import 'jest-styled-components';
+import renderComponent from '../__utils__/renderComponent';
 // @ts-ignore: No types
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
-import renderComponent from './utilities/renderComponent';
 import App from '../App';
 
 jest.mock('redux-persist/integration/react', () => ({

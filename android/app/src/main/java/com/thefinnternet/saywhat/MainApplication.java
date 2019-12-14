@@ -1,4 +1,4 @@
-package com.saywhat;
+package com.thefinnternet.saywhat;
 
 import android.app.Application;
 import android.content.Context;
