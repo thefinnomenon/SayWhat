@@ -92,8 +92,19 @@ platform :android do
   end
 
   lane :beta do
+    add_badge
     gradle(task: 'assemble', build_type: 'releaseStaging', project_dir: './android/')
     upload_to_play_store(track: 'beta')
+    # This is needed to undo the badge changes to the app icons
+    reset_git_repo(
+      force: true,
+      files: [
+        "./android/app/src/main/res"
+      ]
+    )
+    commit_version_bump(message: "Build version bump by fastlane [#{build_number}] [skip ci]")
+    add_git_tag(tag: "googleplay-#{build_number}")
+    push_to_git_remote
   end
 end
 
