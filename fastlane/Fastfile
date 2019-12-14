@@ -92,12 +92,8 @@ platform :android do
   end
 
   lane :beta do
-    # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
-    gradle(
-      task: "assemble",
-      build_type: "releaseStaging",
-      project_dir: "./android/"
-    )
+    gradle(task: 'assemble', build_type: 'releaseStaging', project_dir: './android/')
+    upload_to_play_store(track: 'beta')
   end
 end
 
