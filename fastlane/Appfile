@@ -10,6 +10,6 @@ team_id("9AGG7EUW88") # Developer Portal Team ID
 
 # Android config
 # JSON key generated for the android play store [https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials]
-json_key_file "./key.json"
+json_key_file "./fastlane/key.json"
 # Application id for the android app found in build.gradle file
 package_name "com.thefinnternet.saywhat"
