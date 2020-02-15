@@ -43,7 +43,7 @@
     "redux": "^4.0.4",
     "redux-persist": "^6.0.0",
     "styled-components": "^4.4.0",
-    "yarn": "^1.19.0"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
